@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public bool onGround = true;
     public float horizontalMovement;
     public float verticalMovement;
+    public float experiencePoints = 0;
+    public float healthPoints = 10;
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
 
@@ -33,6 +33,15 @@ public class PlayerController : MonoBehaviour
             verticalMovement = rigidBody.velocity.y;
         }
         rigidBody.velocity = new Vector2(horizontalMovement, verticalMovement);
+
+        if (horizontalMovement > 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (horizontalMovement < 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }    
     }
 
     private void OnTriggerExit2D(Collider2D collision)
