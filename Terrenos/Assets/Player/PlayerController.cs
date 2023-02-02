@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float verticalMovement;
     public float experiencePoints = 0;
     public float healthPoints = 10;
+    public bool hit = false;
+    private Animator anim;
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
 
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontalMovement = Input.GetAxis("Horizontal") * movementSpeed;
         verticalMovement = Input.GetAxisRaw("Jump");
+        hit = Input.GetMouseButton(0) && !hit; 
         if (onGround && verticalMovement > 0.1)
         {
             verticalMovement = jumpHeight;
@@ -42,6 +46,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = new Vector3(1, 1, 1);
         }    
+    }
+
+    private void Update()
+    {
+        anim.SetBool("hit", hit);   
     }
 
     private void OnTriggerExit2D(Collider2D collision)
