@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
-
     // Start is called before the first frame update
     void Start()
     {
