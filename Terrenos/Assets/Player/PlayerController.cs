@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,12 +15,17 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
+    private CapsuleCollider2D capsuleCollider;
+    private Vector2 mousePos;
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
+        Debug.Log(WorldGeneration.worldHeight + capsuleCollider.size.y + 0.1);
+        transform.position = new Vector2(0, WorldGeneration.worldHeight + capsuleCollider.size.y);
     }
 
     // Update is called once per frame
@@ -49,6 +56,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         anim.SetBool("hit", hit);   
     }
 

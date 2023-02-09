@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameStartScreen : MonoBehaviour
 {
     
-    public bool gameStarted = false;
+    public bool gameStarted = true;
 
     // gets rid of the main menu screen
     public void StartGame() {
