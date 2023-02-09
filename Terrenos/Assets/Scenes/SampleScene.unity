@@ -168,8 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 21300000, guid: d643bd97cffae6f4b97a5a2094530402, type: 3}
-  blockObject: {fileID: 0}
   worldWidth: 100
+  blocks: []
 --- !u!1 &241015634
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 100, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -385,7 +385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389410915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 101, z: 0}
+  m_LocalPosition: {x: 2, y: 101, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -437,6 +437,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2485461121553929642, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2485461122038508202, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -517,6 +521,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 2485461122222585814, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485461122222585814, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2485461122222585815, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -527,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2485461122222585815, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.81
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 2485461122222585815, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
       propertyPath: m_LocalPosition.z

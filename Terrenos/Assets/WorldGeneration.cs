@@ -32,15 +32,20 @@ public class WorldGeneration : MonoBehaviour
         {
             for (int x = 0; x < worldWidth; x++)
             {
-                GameObject newBlock = new GameObject(name = "block");
-                newBlock.AddComponent<SpriteRenderer>();
-                newBlock.GetComponent<SpriteRenderer>().sprite = blockSprite;
-                newBlock.AddComponent<BoxCollider2D>();
-                newBlock.tag = "ground";
-                newBlock.transform.parent = transform;
-                newBlock.transform.position = new Vector2(x, y);
-                blocks.Add(newBlock);
+                PlaceBlock("block", "ground", blockSprite, new Vector2(x, y));
             }
         }
+    }
+
+    public void PlaceBlock(string name, string tag, Sprite sprite, Vector2 position)
+    {
+        GameObject newBlock = new GameObject(name);
+        newBlock.tag = tag;
+        newBlock.AddComponent<SpriteRenderer>();
+        newBlock.GetComponent<SpriteRenderer>().sprite = sprite;
+        newBlock.AddComponent<BoxCollider2D>();
+        newBlock.transform.parent = transform;
+        newBlock.transform.position = position;
+        blocks.Add(newBlock);
     }
 }
