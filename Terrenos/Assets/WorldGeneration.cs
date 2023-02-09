@@ -43,11 +43,12 @@ public class WorldGeneration : MonoBehaviour
     {
         GameObject newBlock = new GameObject(name);
         newBlock.tag = tag;
+        newBlock.AddComponent<BoxCollider2D>();
+        newBlock.GetComponent<BoxCollider2D>().size = new Vector2(1,1);
+        newBlock.transform.position = position;
+        newBlock.transform.parent = transform;
         newBlock.AddComponent<SpriteRenderer>();
         newBlock.GetComponent<SpriteRenderer>().sprite = sprite;
-        newBlock.AddComponent<BoxCollider2D>();
-        newBlock.transform.parent = transform;
-        newBlock.transform.position = position;
         blocks.Add(position);
         blockObjects.Add(newBlock);
     }
