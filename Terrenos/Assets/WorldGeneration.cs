@@ -9,11 +9,13 @@ public class WorldGeneration : MonoBehaviour
     public Sprite blockSprite;
     public int worldWidth = 100;
     public static int worldHeight = 100;
-    public List<GameObject> blocks = new List<GameObject>();
+    public List<Vector2> blocks = new List<Vector2>();
+    public List<GameObject> blockObjects = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
         GenerateWorld();
+        RemoveBlock(new Vector2(1, 99));
     }
 
     // Update is called once per frame
@@ -46,6 +48,12 @@ public class WorldGeneration : MonoBehaviour
         newBlock.AddComponent<BoxCollider2D>();
         newBlock.transform.parent = transform;
         newBlock.transform.position = position;
-        blocks.Add(newBlock);
+        blocks.Add(position);
+        blockObjects.Add(newBlock);
+    }
+
+    public void RemoveBlock(Vector2 position)
+    {
+        Destroy(blockObjects[blocks.IndexOf(position)]);
     }
 }
