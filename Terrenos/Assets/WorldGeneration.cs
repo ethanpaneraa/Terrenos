@@ -7,7 +7,7 @@ using UnityEngine;
 public class WorldGeneration : MonoBehaviour
 {
     public Sprite blockSprite;
-    public int worldWidth = 100;
+    public static int worldWidth = 100;
     public static int worldHeight = 100;
     public List<Vector2> blocks = new List<Vector2>();
     public List<GameObject> blockObjects = new List<GameObject>();
@@ -21,7 +21,7 @@ public class WorldGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnValidate()
@@ -44,7 +44,7 @@ public class WorldGeneration : MonoBehaviour
         GameObject newBlock = new GameObject(name);
         newBlock.tag = tag;
         newBlock.AddComponent<BoxCollider2D>();
-        newBlock.GetComponent<BoxCollider2D>().size = new Vector2(1,1);
+        newBlock.GetComponent<BoxCollider2D>().size = new Vector2(1, 1);
         newBlock.transform.position = position;
         newBlock.transform.parent = transform;
         newBlock.AddComponent<SpriteRenderer>();
