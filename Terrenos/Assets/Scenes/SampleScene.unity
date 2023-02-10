@@ -168,7 +168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSprite: {fileID: 21300000, guid: d643bd97cffae6f4b97a5a2094530402, type: 3}
-  worldWidth: 100
   blocks: []
   blockObjects: []
 --- !u!1 &241015634
@@ -510,6 +509,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2485461122222585810, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
+      propertyPath: worldGenerator
+      value: 
+      objectReference: {fileID: 101895965}
     - target: {fileID: 2485461122222585811, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
       propertyPath: m_Material
       value: 

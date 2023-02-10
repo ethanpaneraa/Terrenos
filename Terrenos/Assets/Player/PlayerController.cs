@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private CapsuleCollider2D capsuleCollider;
     private Vector2 mousePos;
+    public WorldGeneration worldGenerator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,12 @@ public class PlayerController : MonoBehaviour
         horizontalMovement = Input.GetAxis("Horizontal") * movementSpeed;
         verticalMovement = Input.GetAxisRaw("Jump");
         hit = Input.GetMouseButton(0) && !hit; 
+
+        if (hit)
+        {
+            worldGenerator.RemoveBlock(mousePos);
+        }
+
         if (onGround && verticalMovement > 0.1)
         {
             verticalMovement = jumpHeight;
@@ -56,6 +64,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.x = Mathf.RoundToInt(mousePos.x);
+        mousePos.y = Mathf.RoundToInt(mousePos.y);
         anim.SetBool("hit", hit);   
     }
 
