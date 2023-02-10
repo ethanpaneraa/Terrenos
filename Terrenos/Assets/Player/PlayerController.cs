@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public float experiencePoints = 0;
     public float healthPoints = 10;
     public bool hit = false;
+    public bool place = false;
+    public Sprite blockSprite;
     private Animator anim;
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
@@ -34,11 +36,15 @@ public class PlayerController : MonoBehaviour
     {
         horizontalMovement = Input.GetAxis("Horizontal") * movementSpeed;
         verticalMovement = Input.GetAxisRaw("Jump");
-        hit = Input.GetMouseButton(0) && !hit; 
-
+        hit = Input.GetMouseButton(0) && !hit;
+        place = Input.GetMouseButton(1) && !place;
         if (hit)
         {
             worldGenerator.RemoveBlock(mousePos);
+        }
+        if (place)
+        {
+            worldGenerator.PlaceBlock("placedBlock", "ground", blockSprite, mousePos);
         }
 
         if (onGround && verticalMovement > 0.1)

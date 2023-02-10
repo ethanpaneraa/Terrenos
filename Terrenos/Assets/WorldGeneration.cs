@@ -40,16 +40,19 @@ public class WorldGeneration : MonoBehaviour
 
     public void PlaceBlock(string name, string tag, Sprite sprite, Vector2 position)
     {
-        GameObject newBlock = new GameObject(name);
-        newBlock.tag = tag;
-        newBlock.AddComponent<BoxCollider2D>();
-        newBlock.GetComponent<BoxCollider2D>().size = new Vector2(1, 1);
-        newBlock.transform.position = position;
-        newBlock.transform.parent = transform;
-        newBlock.AddComponent<SpriteRenderer>();
-        newBlock.GetComponent<SpriteRenderer>().sprite = sprite;
-        blocks.Add(position);
-        blockObjects.Add(newBlock);
+        if (!blocks.Contains(position))
+        {
+            GameObject newBlock = new GameObject(name);
+            newBlock.tag = tag;
+            newBlock.AddComponent<BoxCollider2D>();
+            newBlock.GetComponent<BoxCollider2D>().size = new Vector2(1, 1);
+            newBlock.transform.position = position;
+            newBlock.transform.parent = transform;
+            newBlock.AddComponent<SpriteRenderer>();
+            newBlock.GetComponent<SpriteRenderer>().sprite = sprite;
+            blocks.Add(position);
+            blockObjects.Add(newBlock);
+        }
     }
 
     public void RemoveBlock(Vector2 position)
