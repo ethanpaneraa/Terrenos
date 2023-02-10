@@ -15,7 +15,6 @@ public class WorldGeneration : MonoBehaviour
     void Start()
     {
         GenerateWorld();
-        RemoveBlock(new Vector2(1, 99));
     }
 
     // Update is called once per frame
@@ -55,6 +54,9 @@ public class WorldGeneration : MonoBehaviour
 
     public void RemoveBlock(Vector2 position)
     {
-        Destroy(blockObjects[blocks.IndexOf(position)]);
+        if (blocks.Contains(position))
+        {
+            Destroy(blockObjects[blocks.IndexOf(position)]);
+        }
     }
 }
