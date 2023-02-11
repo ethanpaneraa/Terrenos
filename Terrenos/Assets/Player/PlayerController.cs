@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private CapsuleCollider2D capsuleCollider;
     private Vector2 mousePos;
     public WorldGeneration worldGenerator;
+    public GameStartScreen gameStartScreen; 
 
     // Start is called before the first frame update
     void Start()

@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameStartScreen : MonoBehaviour
 {
     
-    public bool gameStarted = true;
+    private bool gameStarted = false;
 
     // gets rid of the main menu screen
     public void StartGame() {
@@ -18,6 +18,11 @@ public class GameStartScreen : MonoBehaviour
     public void QuitGame() {
         Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false; 
+    }
+
+
+    public bool getGameState() {
+        return gameStarted; 
     }
 
 }
