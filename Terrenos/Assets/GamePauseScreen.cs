@@ -27,5 +27,3 @@ public class GamePauseScreen : MonoBehaviour
         return gamePaused; 
     }
 }
-
-// test
