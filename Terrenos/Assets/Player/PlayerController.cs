@@ -1,6 +1,7 @@
-using UnityEngine;
 using System.Collections;
-using System;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,11 +21,21 @@ public class PlayerController : MonoBehaviour
     private CapsuleCollider2D capsuleCollider;
     private Vector2 mousePos;
     public WorldGeneration worldGenerator;
-    public GameStartScreen gameStartScreen; 
+    public GameStartScreen gameStartScreen;
+    public GamePauseScreen gamePauseScreen; 
+    private int playerHealth = 100;
+    //private float timeBetweenAttacks;
+    //public float startTimeBetweenAttacks;
+    //public Transform attackPos;
+    //public LayerMask whatIsEnemies;
+    //public float attackRange; 
+    //public int inflictDamage; 
+
+
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -65,6 +76,7 @@ public class PlayerController : MonoBehaviour
         else if (horizontalMovement < 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
+
         }    
     }
 
@@ -73,7 +85,17 @@ public class PlayerController : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.x = Mathf.RoundToInt(mousePos.x);
         mousePos.y = Mathf.RoundToInt(mousePos.y);
-        anim.SetBool("hit", hit);   
+        anim.SetBool("hit", hit);
+
+
+        //if (timeBetweenAttacks <= 0) {
+        //    if(Input.GetKey(KeyCode.Space))
+        //    {
+        //        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
+
+        //    }
+        //}
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)

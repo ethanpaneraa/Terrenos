@@ -20,7 +20,6 @@ public class GameStartScreen : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false; 
     }
 
-
     public bool getGameState() {
         return gameStarted; 
     }
