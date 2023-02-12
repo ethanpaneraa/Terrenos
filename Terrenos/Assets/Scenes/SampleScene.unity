@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 101895962}
   - component: {fileID: 101895965}
   m_Layer: 0
-  m_Name: terrain
+  m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -561,6 +561,7 @@ MonoBehaviour:
   smoothing: 0.5
   playerTransform: {fileID: 538900587}
   GameStartScreen: {fileID: 461967734}
+  gamePauseScreen: {fileID: 0}
 --- !u!4 &538900587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2485461122222585815, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
@@ -791,7 +792,7 @@ GameObject:
   - component: {fileID: 997289610}
   - component: {fileID: 997289609}
   m_Layer: 0
-  m_Name: startingSword
+  m_Name: Starting Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1055,7 +1056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1389410916}
   m_Layer: 0
-  m_Name: entities
+  m_Name: Entities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1388,7 +1389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2485461122222585813, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
       propertyPath: m_Name
-      value: player
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2485461122222585814, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
       propertyPath: m_FlipX
