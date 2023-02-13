@@ -59,7 +59,10 @@ public class WorldGeneration : MonoBehaviour
     {
         if (blocks.Contains(position))
         {
-            Destroy(blockObjects[blocks.IndexOf(position)]);
+            int removal_index = blocks.IndexOf(position);
+            Destroy(blockObjects[removal_index]);
+            blockObjects.RemoveAt(removal_index);
+            blocks.Remove(position);
         }
     }
 }
