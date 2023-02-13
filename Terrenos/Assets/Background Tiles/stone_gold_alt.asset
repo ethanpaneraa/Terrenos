@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: dirt_grass_11
+  m_Name: stone_gold_alt
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 72fc826343f280d4785b023e8853b0a0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: cc7015d00763d7e49afab11bbe0118a4, type: 3}
+  m_Color: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
   m_Transform:
     e00: 1
     e01: 0
