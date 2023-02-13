@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-        transform.position = new Vector2(0, WorldGeneration.worldHeight + capsuleCollider.size.y);
+        //transform.position = new Vector2(0, WorldGeneration.worldHeight + capsuleCollider.size.y);
     }
 
     // Update is called once per frame
