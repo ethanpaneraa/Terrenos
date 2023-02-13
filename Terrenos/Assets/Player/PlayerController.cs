@@ -21,15 +21,8 @@ public class PlayerController : MonoBehaviour
     private CapsuleCollider2D capsuleCollider;
     private Vector2 mousePos;
     public WorldGeneration worldGenerator;
-    public GameStartScreen gameStartScreen;
     public GamePauseScreen gamePauseScreen; 
     private int playerHealth = 100;
-    //private float timeBetweenAttacks;
-    //public float startTimeBetweenAttacks;
-    //public Transform attackPos;
-    //public LayerMask whatIsEnemies;
-    //public float attackRange; 
-    //public int inflictDamage; 
 
 
 
@@ -86,16 +79,6 @@ public class PlayerController : MonoBehaviour
         mousePos.x = Mathf.RoundToInt(mousePos.x);
         mousePos.y = Mathf.RoundToInt(mousePos.y);
         anim.SetBool("hit", hit);
-
-
-        //if (timeBetweenAttacks <= 0) {
-        //    if(Input.GetKey(KeyCode.Space))
-        //    {
-        //        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-
-        //    }
-        //}
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
