@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class BuildController : MonoBehaviour
 {
-    private Vector2 mousePos;
+    private Vector3Int mousePos;
     private Vector3 playerPos;
     private Vector3 playerPosBelow;
     private float startMouseDown;
@@ -14,17 +14,19 @@ public class BuildController : MonoBehaviour
     public TileBase[] tileBaseArray;
     public GameObject player;
     private Transform playerTransform;
+    private BuildController buildController;
     // Start is called before the first frame update
     void Start()
     {
         destructibleTilemap = GetComponent<Tilemap>();
         playerTransform = player.GetComponent<Transform>();
+        buildController = this;
     }
 
     // Update is called once per frame
     void Update()
     {
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = destructibleTilemap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         playerPos = destructibleTilemap.WorldToCell(playerTransform.position);
         playerPosBelow = new Vector3(playerPos.x, playerPos.y - 1, playerPos.z);
 
@@ -35,21 +37,48 @@ public class BuildController : MonoBehaviour
         }
 
         // destroying blocks
-        if (Input.GetMouseButton(0) && Time.time - startMouseDown > destroyTime)
+        if (Input.GetMouseButton(0) &&
+            Time.time - startMouseDown > destroyTime &&
+            buildController.CanDestroy(mousePos))
         {
-            destructibleTilemap.SetTile(destructibleTilemap.WorldToCell(mousePos), null);
+            destructibleTilemap.SetTile(mousePos, null);
             startMouseDown = Time.time;
         }
 
         // placing blocks
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetMouseButton(1)  && CanBuild(mousePos))
         {
-            if ((destructibleTilemap.WorldToCell(mousePos) != playerPos) &&
-                (destructibleTilemap.WorldToCell(mousePos) != playerPosBelow))
-            {
-                destructibleTilemap.SetTile(destructibleTilemap.WorldToCell(mousePos), tileBaseArray[0]);
-                startMouseDown = Time.time;
-            }
+            // set tile
+            destructibleTilemap.SetTile(mousePos, tileBaseArray[0]);
+            startMouseDown = Time.time;
         }
+    }
+    // check if any tiles are adjacent
+    public bool CanBuild(Vector3Int cellPos)
+    {
+        if (cellPos == playerPos || cellPos == playerPosBelow)
+        {
+            return false;
+        }
+        if (destructibleTilemap.GetTile(cellPos) != null)
+        {
+            return false;
+        }
+        if ((destructibleTilemap.GetTile(new Vector3Int(cellPos.x + 1, cellPos.y, cellPos.z)) != null) ||
+            (destructibleTilemap.GetTile(new Vector3Int(cellPos.x - 1, cellPos.y, cellPos.z)) != null) ||
+            (destructibleTilemap.GetTile(new Vector3Int(cellPos.x, cellPos.y + 1, cellPos.z)) != null) ||
+            (destructibleTilemap.GetTile(new Vector3Int(cellPos.x, cellPos.y - 1, cellPos.z)) != null))
+        {
+            return true;
+        }
+        return false;
+    }
+    public bool CanDestroy(Vector3Int cellPos)
+    {
+        if (destructibleTilemap.GetTile(cellPos) != null)
+        {
+            return true;
+        }
+        return false;
     }
 }

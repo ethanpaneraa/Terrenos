@@ -6,13 +6,14 @@ public class Ladder : MonoBehaviour
 {
     public float climbSpeed;
     private bool onLadder;
-    public GameObject player;
+    private GameObject player;
     private Rigidbody2D rb;
     private float gravityScale;
     // Start is called before the first frame update
     void Start()
     {
         onLadder = false;
+        player = FindObjectOfType<PlayerController>().gameObject;
         rb = player.GetComponent<Rigidbody2D>();
         gravityScale = rb.gravityScale;
     }
@@ -20,24 +21,15 @@ public class Ladder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // going up
-        if (Input.GetKeyDown(KeyCode.UpArrow) && onLadder)
+        if (onLadder)
         {
-            rb.velocity = new Vector2(rb.velocity.x, climbSpeed);
-        }
-        if (Input.GetKeyUp(KeyCode.UpArrow) && onLadder)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-        }
-
-        // going down
-        if (Input.GetKeyDown(KeyCode.DownArrow) && onLadder)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, -climbSpeed);
-        }
-        if (Input.GetKeyUp(KeyCode.DownArrow) && onLadder)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
+            if (Input.GetAxisRaw("Jump") == 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, Input.GetAxis("Vertical") * climbSpeed);
+            } else
+            {
+                rb.velocity = new Vector2(rb.velocity.x, climbSpeed);
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

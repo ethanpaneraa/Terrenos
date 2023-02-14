@@ -7,29 +7,37 @@ public class TileLogic : MonoBehaviour
 {
     public Tilemap hoverTilemap;
     public TileBase hoverTile;
-    Vector2 mousePos;
-    Vector3Int oldCellPos;
-    Vector3Int currCellPos;
+    private GameObject player;
+    private Vector3 playerPos;
+    private Vector3 playerPosBelow;
+    public BuildController buildController;
+    Vector3Int mousePos;
+    Vector3Int oldPos;
     // Start is called before the first frame update
     void Start()
     {
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        oldCellPos.x = hoverTilemap.WorldToCell(mousePos).x;
-        oldCellPos.y = hoverTilemap.WorldToCell(mousePos).y;
-        hoverTilemap.SetTile(oldCellPos, hoverTile);
+        player = FindObjectOfType<PlayerController>().gameObject;
     }
 
     // Update is called  once per frame
     void Update()
     {
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        currCellPos.x = hoverTilemap.WorldToCell(mousePos).x;
-        currCellPos.y = hoverTilemap.WorldToCell(mousePos).y;
-        if (currCellPos.x != oldCellPos.x || currCellPos.y != oldCellPos.y)
+        mousePos = hoverTilemap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        playerPos = hoverTilemap.WorldToCell(player.transform.position);
+        playerPosBelow = new Vector3(playerPos.x, playerPos.y-1, playerPos.z);
+
+        if (mousePos.x != oldPos.x || mousePos.y != oldPos.y)
         {
-            hoverTilemap.SetTile(oldCellPos, null);
-            hoverTilemap.SetTile(currCellPos, hoverTile);
-            oldCellPos = currCellPos;
+            hoverTilemap.SetTile(oldPos, null);
+            if (buildController.CanBuild(mousePos) || buildController.CanDestroy(mousePos))
+            {
+                hoverTilemap.SetTile(mousePos, hoverTile);
+            }
+            oldPos = mousePos;
+        }
+        if (mousePos == playerPos || mousePos == playerPosBelow)
+        {
+            hoverTilemap.SetTile(mousePos, null);
         }
     }
 }

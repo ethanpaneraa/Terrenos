@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class GameStartScreen : MonoBehaviour
 {
-    
+    public Canvas toolbar;
     private bool gameStarted = false;
 
+    private void Start()
+    {
+        toolbar.gameObject.SetActive(false);
+    }
     // gets rid of the main menu screen
     public void StartGame() {
         gameObject.SetActive(false);
+        toolbar.gameObject.SetActive(true);
         gameStarted = true; 
     }
 
