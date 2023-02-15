@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     public WorldGeneration worldGenerator;
     public GamePauseScreen gamePauseScreen; 
     private int playerHealth = 100;
+    private int playerMana = 50; 
+    public HealthBar HealthBar; 
+    public ManaBar ManaBar; 
 
     //private float timeBetweenAttacks;
     //public float startTimeBetweenAttacks;
@@ -41,6 +44,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         //transform.position = new Vector2(0, WorldGeneration.worldHeight + capsuleCollider.size.y);
+        HealthBar.setMaxHealth(playerHealth); 
+        ManaBar.setMaxMana(playerMana); 
     }
 
     // Update is called once per frame
@@ -62,6 +67,10 @@ public class PlayerController : MonoBehaviour
 
         if (onGround && verticalMovement > 0.1)
         {
+            // playerHealth -= 10; 
+            // playerMana -= 10; 
+            // HealthBar.setHealth(playerHealth); 
+            // ManaBar.setMana(playerMana); 
             verticalMovement = jumpHeight;
         }
         else
