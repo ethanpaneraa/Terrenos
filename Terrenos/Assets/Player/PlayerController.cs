@@ -24,16 +24,23 @@ public class PlayerController : MonoBehaviour
     public GamePauseScreen gamePauseScreen; 
     private int playerHealth = 100;
 
+    //private float timeBetweenAttacks;
+    //public float startTimeBetweenAttacks;
+    //public Transform attackPos;
+    //public LayerMask whatIsEnemies;
+    //public float attackRange; 
+    //public int inflictDamage; 
+
 
 
     // Start is called before the first frame update
     void Start()
-    { 
+    {
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-        transform.position = new Vector2(0, WorldGeneration.worldHeight + capsuleCollider.size.y);
+        //transform.position = new Vector2(0, WorldGeneration.worldHeight + capsuleCollider.size.y);
     }
 
     // Update is called once per frame
@@ -41,15 +48,16 @@ public class PlayerController : MonoBehaviour
     {
         horizontalMovement = Input.GetAxis("Horizontal") * movementSpeed;
         verticalMovement = Input.GetAxisRaw("Jump");
+
         hit = Input.GetMouseButton(0) && !hit;
-        place = Input.GetMouseButton(1) && !place;
+        place = Input.GetKey(KeyCode.P) && !place;
         if (hit)
         {
             worldGenerator.RemoveBlock(mousePos);
         }
         if (place)
         {
-            worldGenerator.PlaceBlock("placedBlock", "ground", blockSprite, mousePos);
+            //worldGenerator.PlaceBlock("placedBlock", "ground", blockSprite, mousePos);
         }
 
         if (onGround && verticalMovement > 0.1)
