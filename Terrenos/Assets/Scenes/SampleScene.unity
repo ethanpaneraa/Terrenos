@@ -8567,8 +8567,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "- Mouse hold to mine\n- 'P' to place items\n- SPACE to jump\n- Up/down
-    arrows to\n  climb ladders"
+  m_Text: '- Left Mouse hold to mine
+
+    - Right Mouse click to place blocks
+
+    -
+    SPACE to jump
+
+    - W A S D for movement'
 --- !u!222 &350592179
 CanvasRenderer:
   m_ObjectHideFlags: 0
