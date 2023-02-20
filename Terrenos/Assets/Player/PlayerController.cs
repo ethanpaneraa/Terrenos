@@ -109,6 +109,7 @@ public class PlayerController : MonoBehaviour
         mousePos.x = Mathf.RoundToInt(mousePos.x);
         mousePos.y = Mathf.RoundToInt(mousePos.y);
         anim.SetBool("hit", hit);
+        anim.SetFloat("horizontal", horizontalMovement);
 
         if (Input.GetKeyDown(KeyCode.X)) {
             XpBar.setXP(XpBar.currentXP += 10); 
