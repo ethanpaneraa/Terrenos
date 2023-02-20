@@ -15,7 +15,8 @@ public class BuildController : MonoBehaviour
     public GameObject player;
     private Transform playerTransform;
     private BuildController buildController;
-    private PlayerController playerController;
+    private int blocksDestroyed = 0; 
+    public XpBar XpBar; 
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +51,11 @@ public class BuildController : MonoBehaviour
         {
             destructibleTilemap.SetTile(mousePos, null);
             startMouseDown = Time.time;
+            blocksDestroyed += 1; 
+            if (blocksDestroyed == 5) {
+                XpBar.setXP(XpBar.currentXP += 10); 
+                blocksDestroyed = 0; 
+            }
         }
 
         // placing blocks
