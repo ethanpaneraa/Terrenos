@@ -60,10 +60,15 @@ public class PlayerController : MonoBehaviour
 
         hit = Input.GetMouseButton(0) && !hit;
         place = Input.GetKey(KeyCode.P) && !place;
+        InventorySlot();
+
+        // Behavior when player is hitting
         if (hit)
         {
             worldGenerator.RemoveBlock(mousePos);
         }
+
+        // Behavior when player is placing???
         if (place)
         {
             //worldGenerator.PlaceBlock("placedBlock", "ground", blockSprite, mousePos);
@@ -124,5 +129,40 @@ public class PlayerController : MonoBehaviour
         {
             onGround = true;
         }
+    }
+
+    private void InventorySlot()
+    {
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            inventorySlot = 0;
+        }
+        else if (Input.GetKey(KeyCode.Alpha2))
+        {
+            inventorySlot = 1;
+
+        }
+        else if (Input.GetKey(KeyCode.Alpha3))
+        {
+            inventorySlot = 2;
+        }
+        else if (Input.GetKey(KeyCode.Alpha4))
+        {
+            inventorySlot = 3;
+        }
+        else if (Input.GetKey(KeyCode.Alpha5))
+        {
+            inventorySlot = 4;
+        }
+        else if (Input.GetKey(KeyCode.Alpha6))
+        {
+            inventorySlot = 5;
+        }
+        else if (Input.GetKey(KeyCode.Alpha7))
+        {
+            inventorySlot = 6;
+        }
+
+        Debug.Log(inventory.InventoryItems[inventorySlot].itemName);
     }
 }

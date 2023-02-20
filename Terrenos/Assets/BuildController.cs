@@ -23,6 +23,7 @@ public class BuildController : MonoBehaviour
         destructibleTilemap = GetComponent<Tilemap>();
         playerTransform = player.GetComponent<Transform>();
         buildController = this;
+        playerController = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -31,17 +32,22 @@ public class BuildController : MonoBehaviour
         mousePos = destructibleTilemap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         playerPos = destructibleTilemap.WorldToCell(playerTransform.position);
         playerPosBelow = new Vector3(playerPos.x, playerPos.y - 1, playerPos.z);
-
+        int inventorySlot = playerController.inventorySlot;
+        Inventory inventory = playerController.inventory;
+        InventoryItem inventoryItem = inventory.InventoryItems[inventorySlot];
 
         if (Input.GetMouseButtonDown(0))
         {
             startMouseDown = Time.time;
         }
 
+
+
         // destroying blocks
         if (Input.GetMouseButton(0) &&
             Time.time - startMouseDown > destroyTime &&
-            buildController.CanDestroy(mousePos))
+            buildController.CanDestroy(mousePos) &&
+            inventoryItem.Destroys)
         {
             destructibleTilemap.SetTile(mousePos, null);
             startMouseDown = Time.time;
@@ -53,7 +59,9 @@ public class BuildController : MonoBehaviour
         }
 
         // placing blocks
-        if (Input.GetMouseButton(1)  && CanBuild(mousePos))
+        if (Input.GetMouseButton(1) && 
+            CanBuild(mousePos) &&
+            inventoryItem.Places)
         {
             // set tile
             destructibleTilemap.SetTile(mousePos, tileBaseArray[0]);
