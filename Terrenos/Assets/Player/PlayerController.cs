@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private int playerMana = 50; 
     public HealthBar HealthBar; 
     public ManaBar ManaBar; 
+    public int inventorySlot = 0;
 
     //private float timeBetweenAttacks;
     //public float startTimeBetweenAttacks;
@@ -56,6 +57,8 @@ public class PlayerController : MonoBehaviour
 
         hit = Input.GetMouseButton(0) && !hit;
         place = Input.GetKey(KeyCode.P) && !place;
+        InventorySlot();
+
         if (hit)
         {
             worldGenerator.RemoveBlock(mousePos);
@@ -112,6 +115,39 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("ground"))
         {
             onGround = true;
+        }
+    }
+
+    private void InventorySlot()
+    {
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            inventorySlot = 0;
+        }
+        else if (Input.GetKey(KeyCode.Alpha2))
+        {
+            inventorySlot = 1;
+
+        }
+        else if (Input.GetKey(KeyCode.Alpha3))
+        {
+            inventorySlot = 2;
+        }
+        else if (Input.GetKey(KeyCode.Alpha4))
+        {
+            inventorySlot = 3;
+        }
+        else if (Input.GetKey(KeyCode.Alpha5))
+        {
+            inventorySlot = 4;
+        }
+        else if (Input.GetKey(KeyCode.Alpha6))
+        {
+            inventorySlot = 5;
+        }
+        else if (Input.GetKey(KeyCode.Alpha7))
+        {
+            inventorySlot = 6;
         }
     }
 }
