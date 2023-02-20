@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float movementSpeed = 2;
     public float jumpHeight = 4;
     public bool onGround = true;
     public float horizontalMovement;
@@ -22,10 +21,14 @@ public class PlayerController : MonoBehaviour
     private Vector2 mousePos;
     public WorldGeneration worldGenerator;
     public GamePauseScreen gamePauseScreen; 
-    private int playerHealth = 100;
-    private int playerMana = 50; 
+    // Player stats
+    public int playerHealth = 100;
+    public int playerMana = 50; 
+    public float movementSpeed = 2;
+    public int attackDamage = 15; 
     public HealthBar HealthBar; 
     public ManaBar ManaBar; 
+    public XpBar XpBar; 
 
     //private float timeBetweenAttacks;
     //public float startTimeBetweenAttacks;
@@ -46,6 +49,7 @@ public class PlayerController : MonoBehaviour
         //transform.position = new Vector2(0, WorldGeneration.worldHeight + capsuleCollider.size.y);
         HealthBar.setMaxHealth(playerHealth); 
         ManaBar.setMaxMana(playerMana); 
+
     }
 
     // Update is called once per frame
@@ -67,10 +71,11 @@ public class PlayerController : MonoBehaviour
 
         if (onGround && verticalMovement > 0.1)
         {
-            // playerHealth -= 10; 
-            // playerMana -= 10; 
-            // HealthBar.setHealth(playerHealth); 
-            // ManaBar.setMana(playerMana); 
+            // Gets rid of health and mana when you jump
+            playerHealth -= 10; 
+            playerMana -= 10; 
+            HealthBar.setHealth(playerHealth); 
+            ManaBar.setMana(playerMana); 
             verticalMovement = jumpHeight;
         }
         else
@@ -88,6 +93,7 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
 
         }    
+
     }
 
     private void Update()
@@ -96,6 +102,12 @@ public class PlayerController : MonoBehaviour
         mousePos.x = Mathf.RoundToInt(mousePos.x);
         mousePos.y = Mathf.RoundToInt(mousePos.y);
         anim.SetBool("hit", hit);
+
+        if (Input.GetKeyDown(KeyCode.X)) {
+            XpBar.setXP(XpBar.currentXP += 10); 
+        }
+
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
