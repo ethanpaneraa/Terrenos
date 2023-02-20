@@ -96,6 +96,7 @@ public class PlayerController : MonoBehaviour
         mousePos.x = Mathf.RoundToInt(mousePos.x);
         mousePos.y = Mathf.RoundToInt(mousePos.y);
         anim.SetBool("hit", hit);
+        anim.SetFloat("horizontal", horizontalMovement);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
