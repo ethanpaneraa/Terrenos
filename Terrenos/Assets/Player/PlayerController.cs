@@ -28,7 +28,9 @@ public class PlayerController : MonoBehaviour
     public int attackDamage = 15; 
     public HealthBar HealthBar; 
     public ManaBar ManaBar; 
-    public XpBar XpBar; 
+    public XpBar XpBar;
+    public int inventorySlot = 2;
+    public Inventory inventory;
 
     //private float timeBetweenAttacks;
     //public float startTimeBetweenAttacks;

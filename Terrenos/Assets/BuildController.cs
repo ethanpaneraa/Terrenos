@@ -16,7 +16,8 @@ public class BuildController : MonoBehaviour
     private Transform playerTransform;
     private BuildController buildController;
     private int blocksDestroyed = 0; 
-    public XpBar XpBar; 
+    public XpBar XpBar;
+    public PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
