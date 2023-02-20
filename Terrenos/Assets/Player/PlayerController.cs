@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     public HealthBar HealthBar; 
     public ManaBar ManaBar; 
     public int inventorySlot = 0;
-    public Inventory inventory;
 
     //private float timeBetweenAttacks;
     //public float startTimeBetweenAttacks;
@@ -60,13 +59,10 @@ public class PlayerController : MonoBehaviour
         place = Input.GetKey(KeyCode.P) && !place;
         InventorySlot();
 
-        // Behavior when player is hitting
         if (hit)
         {
             worldGenerator.RemoveBlock(mousePos);
         }
-
-        // Behavior when player is placing???
         if (place)
         {
             //worldGenerator.PlaceBlock("placedBlock", "ground", blockSprite, mousePos);
@@ -153,7 +149,5 @@ public class PlayerController : MonoBehaviour
         {
             inventorySlot = 6;
         }
-
-        Debug.Log(inventory.InventoryItems[inventorySlot].itemName);
     }
 }
