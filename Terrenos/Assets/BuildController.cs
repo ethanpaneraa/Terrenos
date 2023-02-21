@@ -60,7 +60,7 @@ public class BuildController : MonoBehaviour
         }
 
         // placing blocks
-        if (Input.GetMouseButton(1) && 
+        if (Input.GetMouseButton(0) && 
             CanBuild(mousePos) &&
             inventoryItem.Places)
         {
