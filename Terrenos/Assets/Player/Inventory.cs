@@ -38,6 +38,7 @@ public class Inventory : MonoBehaviour
         // Block
         InventoryItem block = new InventoryItem();
         block.Sprite = blockSprite;
+        block.Places = true;
         InventoryItems.Add(block);
         block.itemName = "block";
 
