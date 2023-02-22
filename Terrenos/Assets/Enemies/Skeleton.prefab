@@ -349,9 +349,10 @@ GameObject:
   - component: {fileID: 8970433488403965662}
   - component: {fileID: 8970433488403965663}
   - component: {fileID: 8970433488403965661}
+  - component: {fileID: 6782059943960976029}
   m_Layer: 1
   m_Name: Skeleton
-  m_TagString: player
+  m_TagString: skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -481,6 +482,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -1.1}
   m_Size: {x: 0.27, y: 0.25}
   m_Direction: 0
+--- !u!114 &6782059943960976029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970433488403965659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc06b716eabaf4c75bfd0b24b6bfd5b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8970433488489479079
 GameObject:
   m_ObjectHideFlags: 0
