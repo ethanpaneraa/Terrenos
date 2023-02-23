@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public XpBar XpBar;
     public int inventorySlot = 2;
     public Inventory inventory;
+    
 
     //private float timeBetweenAttacks;
     //public float startTimeBetweenAttacks;
@@ -79,10 +80,6 @@ public class PlayerController : MonoBehaviour
         if (onGround && verticalMovement > 0.1)
         {
             // Gets rid of health and mana when you jump
-            playerHealth -= 10; 
-            playerMana -= 10; 
-            HealthBar.setHealth(playerHealth); 
-            ManaBar.setMana(playerMana); 
             verticalMovement = jumpHeight;
         }
         else
@@ -166,6 +163,6 @@ public class PlayerController : MonoBehaviour
             inventorySlot = 6;
         }
 
-        Debug.Log(inventory.InventoryItems[inventorySlot].itemName);
+        // Debug.Log(inventory.InventoryItems[inventorySlot].itemName);
     }
 }
