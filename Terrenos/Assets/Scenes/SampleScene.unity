@@ -19086,6 +19086,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2485461122222585813, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
   m_PrefabInstance: {fileID: 2485461122757431228}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1591566766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591566759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2aa9a900b224dbfa7c7a7f9ef24f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRadius: 1.5
+  cooldownTime: 0.5
 --- !u!1 &1593790643
 GameObject:
   m_ObjectHideFlags: 0
