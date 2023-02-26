@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour
     private GameObject Sword;
     private GameObject Pickaxe;
     private GameObject Block;
-    private GameObject activeItem;
+    public GameObject activeItem;
 
     // Start is called before the first frame update
     void Start()

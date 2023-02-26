@@ -20349,6 +20349,7 @@ MonoBehaviour:
   swordSprite: {fileID: 21300000, guid: d6a90d47ea7aa0b46b99a8321ecfabf9, type: 3}
   pickaxeSprite: {fileID: 21300000, guid: 1b8bc10546d689f419e0a9ce0cdb952f, type: 3}
   blockSprite: {fileID: 21300000, guid: d643bd97cffae6f4b97a5a2094530402, type: 3}
+  activeItem: {fileID: 0}
 --- !u!1001 &2024468524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21369,6 +21370,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2485461121201751783, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
+      propertyPath: m_Color.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485461121201751783, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
+      propertyPath: m_Color.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485461121201751783, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
+      propertyPath: m_Color.r
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 2485461121214932584, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
       propertyPath: m_Name
       value: male_leg_back
@@ -21396,6 +21409,18 @@ PrefabInstance:
     - target: {fileID: 2485461121214932585, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485461121214932586, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
+      propertyPath: m_Color.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485461121214932586, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
+      propertyPath: m_Color.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485461121214932586, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
+      propertyPath: m_Color.r
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 2485461121553929640, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
       propertyPath: m_Layer
