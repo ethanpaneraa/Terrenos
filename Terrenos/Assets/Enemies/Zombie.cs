@@ -52,6 +52,25 @@ public class Zombie : MonoBehaviour
     }
 
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "arrow")
+            {
+                // Get the direction from the arrow to the zombie
+                Vector2 direction = transform.position - col.transform.position;
+
+                // Normalize the direction vector to get a unit vector
+                direction = direction.normalized;
+
+                Vector2 pointOfImpact = col.contacts[0].point;
+
+                // Add a force to the zombie in the opposite direction of the arrow
+                
+                GetComponent<Rigidbody2D>().AddForceAtPosition(direction * 200, pointOfImpact, ForceMode2D.Impulse);
+
+                // col.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            }
+    }   
 
     
 }

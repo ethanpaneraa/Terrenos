@@ -37,6 +37,7 @@ public class Inventory : MonoBehaviour
         InventoryItems.Add(bow);
         Bow = new GameObject("Bow");
         Bow.AddComponent<SpriteRenderer>();
+        Bow.AddComponent<Bow>(); 
         Bow.GetComponent<SpriteRenderer>().sprite = bowSprite;
         Bow.GetComponent<SpriteRenderer>().flipY = true;
         Bow.SetActive(false);
