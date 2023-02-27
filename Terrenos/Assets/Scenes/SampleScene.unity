@@ -585,7 +585,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -20345,11 +20345,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InventoryItems: []
+  InventoryObjects: []
   bowSprite: {fileID: 21300000, guid: efa953e297805474da66ccb511966821, type: 3}
   swordSprite: {fileID: 21300000, guid: d6a90d47ea7aa0b46b99a8321ecfabf9, type: 3}
   pickaxeSprite: {fileID: 21300000, guid: 1b8bc10546d689f419e0a9ce0cdb952f, type: 3}
   blockSprite: {fileID: 21300000, guid: d643bd97cffae6f4b97a5a2094530402, type: 3}
   activeItem: {fileID: 0}
+  selectedInventoryItem: {fileID: 0}
 --- !u!1001 &2024468524
 PrefabInstance:
   m_ObjectHideFlags: 0
