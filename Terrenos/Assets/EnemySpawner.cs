@@ -5,11 +5,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Zombie Zombie; 
-    public Skeleton Skeleton; 
-
-    public int numEnemiesToSpawn = 5;  // The number of enemies to spawn at once
-    public float spawnInterval = 100f;  // The time interval between enemy spawns
+    public Zombie Zombie;  // The enemy prefab to be spawned
+    public int numEnemiesToSpawn = 3;  // The number of enemies to spawn at once
+    public float spawnInterval = 800f;  // The time interval between enemy spawns
     private float timeSinceLastSpawn = 0f;  // The time elapsed since the last enemy spawn
     private int numEnemiesSpawned = 0;  // The number of enemies spawned in the current wave
 
@@ -40,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
             numEnemiesSpawned++;
 
             // Wait for 1 second before spawning the next enemy
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(spawnInterval / numEnemiesToSpawn);
         }
     }
 }

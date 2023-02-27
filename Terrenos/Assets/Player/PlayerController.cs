@@ -101,6 +101,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+
+        if (playerHealth <= 0){
+            Destroy(this.gameObject); 
+        }
+
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.x = Mathf.RoundToInt(mousePos.x);
         mousePos.y = Mathf.RoundToInt(mousePos.y);
@@ -129,6 +134,19 @@ public class PlayerController : MonoBehaviour
             onGround = true;
         }
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Check if the collision is with the player
+        if (collision.gameObject.CompareTag("zombie"))
+        {
+            // Get the player's health component
+            playerHealth -= 20; 
+            HealthBar.setHealth(playerHealth); 
+        }
+    }
+
 
     private void InventorySlot()
     {

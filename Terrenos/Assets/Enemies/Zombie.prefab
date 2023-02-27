@@ -494,9 +494,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a71a07d5807480092710e2533babc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieHealth: 100
-  zombieMovementSpeed: 2
-  zombieAttackDamage: 20
+  moveSpeed: 2
+  jumpForce: 8
+  jumpInterval: 3
 --- !u!1 &8753026228952646317
 GameObject:
   m_ObjectHideFlags: 0

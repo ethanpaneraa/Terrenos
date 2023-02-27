@@ -51,6 +51,7 @@ public class Inventory : MonoBehaviour
         Sword = new GameObject("Sword");
         Sword.AddComponent<SpriteRenderer>();
         Sword.GetComponent<SpriteRenderer>().sprite = swordSprite;
+        Sword.AddComponent<Sword>(); 
         Sword.SetActive(false);
         InventoryObjects.Add(Sword);
         Sword.GetComponent<SpriteRenderer>().flipY = true;
