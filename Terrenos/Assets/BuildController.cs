@@ -18,7 +18,9 @@ public class BuildController : MonoBehaviour
     private int blocksDestroyed = 0; 
     public XpBar XpBar;
     public PlayerController playerController;
-    private Inventory inventory;  
+    private Inventory inventory;
+    private InventoryItem inventoryItem;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +37,7 @@ public class BuildController : MonoBehaviour
         mousePos = destructibleTilemap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         playerPos = destructibleTilemap.WorldToCell(playerTransform.position);
         playerPosBelow = new Vector3(playerPos.x, playerPos.y - 1, playerPos.z);
-        InventoryItem inventoryItem = inventory.selectedInventoryItem;
+        inventoryItem = inventory.selectedInventoryItem;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -85,7 +87,7 @@ public class BuildController : MonoBehaviour
             (destructibleTilemap.GetTile(new Vector3Int(cellPos.x, cellPos.y + 1, cellPos.z)) != null) ||
             (destructibleTilemap.GetTile(new Vector3Int(cellPos.x, cellPos.y - 1, cellPos.z)) != null))
         {
-            return true;
+            return inventoryItem.Places;
         }
         return false;
     }
@@ -93,7 +95,7 @@ public class BuildController : MonoBehaviour
     {
         if (destructibleTilemap.GetTile(cellPos) != null)
         {
-            return true;
+            return inventoryItem.Destroys;
         }
         return false;
     }
