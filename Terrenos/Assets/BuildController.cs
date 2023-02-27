@@ -18,6 +18,7 @@ public class BuildController : MonoBehaviour
     private int blocksDestroyed = 0; 
     public XpBar XpBar;
     public PlayerController playerController;
+    private Inventory inventory;  
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class BuildController : MonoBehaviour
         playerTransform = player.GetComponent<Transform>();
         buildController = this;
         playerController = player.GetComponent<PlayerController>();
+        inventory = playerController.inventory;
     }
 
     // Update is called once per frame
@@ -33,9 +35,7 @@ public class BuildController : MonoBehaviour
         mousePos = destructibleTilemap.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         playerPos = destructibleTilemap.WorldToCell(playerTransform.position);
         playerPosBelow = new Vector3(playerPos.x, playerPos.y - 1, playerPos.z);
-        int inventorySlot = playerController.inventorySlot;
-        Inventory inventory = playerController.inventory;
-        InventoryItem inventoryItem = inventory.InventoryItems[inventorySlot];
+        InventoryItem inventoryItem = inventory.selectedInventoryItem;
 
         if (Input.GetMouseButtonDown(0))
         {

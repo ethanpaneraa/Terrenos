@@ -51,8 +51,7 @@ public class PlayerController : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         //transform.position = new Vector2(0, WorldGeneration.worldHeight + capsuleCollider.size.y);
         HealthBar.setMaxHealth(playerHealth); 
-        ManaBar.setMaxMana(playerMana); 
-
+        ManaBar.setMaxMana(playerMana);
     }
 
     // Update is called once per frame
@@ -133,36 +132,41 @@ public class PlayerController : MonoBehaviour
 
     private void InventorySlot()
     {
-        if (Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.Alpha1) && inventorySlot != 0)
         {
             inventorySlot = 0;
         }
-        else if (Input.GetKey(KeyCode.Alpha2))
+        else if (Input.GetKey(KeyCode.Alpha2) && inventorySlot != 1)
         {
             inventorySlot = 1;
 
         }
-        else if (Input.GetKey(KeyCode.Alpha3))
+        else if (Input.GetKey(KeyCode.Alpha3) && inventorySlot != 2)
         {
             inventorySlot = 2;
         }
-        else if (Input.GetKey(KeyCode.Alpha4))
+        else if (Input.GetKey(KeyCode.Alpha4) && inventorySlot != 3)
         {
             inventorySlot = 3;
         }
-        else if (Input.GetKey(KeyCode.Alpha5))
+        else if (Input.GetKey(KeyCode.Alpha5) && inventorySlot != 4)
         {
             inventorySlot = 4;
         }
-        else if (Input.GetKey(KeyCode.Alpha6))
+        else if (Input.GetKey(KeyCode.Alpha6) && inventorySlot != 5)
         {
             inventorySlot = 5;
         }
-        else if (Input.GetKey(KeyCode.Alpha7))
+        else if (Input.GetKey(KeyCode.Alpha7) && inventorySlot != 6)
         {
             inventorySlot = 6;
         }
+        else
+        {
+            return;
+        }
 
+        inventory.switchToItem(inventorySlot);
         // Debug.Log(inventory.InventoryItems[inventorySlot].itemName);
     }
 }
