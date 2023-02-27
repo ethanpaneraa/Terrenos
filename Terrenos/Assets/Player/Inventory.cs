@@ -97,11 +97,11 @@ public class Inventory : MonoBehaviour
         InventoryObjects.Add(object_7);
 
         // Etc
-        GameObject slot_0 = GameObject.Find("InventorySlot (0)");
         activeItem = Pickaxe;
         selectedInventoryItem = pickaxe;
         activeItem.transform.rotation = new Quaternion(0, 0, 0, 0);
         itemSpriteRenderer = activeItem.GetComponent<SpriteRenderer>();
+        InventoryIcons();
     }
 
     public void switchToItem(int activeItemSlot)
@@ -113,9 +113,8 @@ public class Inventory : MonoBehaviour
         itemSpriteRenderer = activeItem.GetComponent<SpriteRenderer>();
 
     }
-    
-    // Update is called once per frame
-    void Update()
+
+    void UpdateHandItemPosition()
     {
         Vector3 handPosition = front_hand.transform.position;
         Quaternion handRotation = front_hand.transform.rotation;
@@ -125,7 +124,7 @@ public class Inventory : MonoBehaviour
         float itemWidth = itemSpriteRenderer.size.x;
         float itemHeight = itemSpriteRenderer.size.y;
         Vector3 handSizeAdjustments = new Vector3(handWidth * -playerDirection, -handHeight, 0);
-        Vector3 itemSizeAdjustments = new Vector3(itemWidth / 2.4f * playerDirection, itemHeight/2.35f, 0);
+        Vector3 itemSizeAdjustments = new Vector3(itemWidth / 2.4f * playerDirection, itemHeight / 2.35f, 0);
         activeItem.transform.position = handPosition + handSizeAdjustments + itemSizeAdjustments;
         // Quaternion rotationQuaternion = handRotation;
         // rotationQuaternion.z = rotationQuaternion.z - playerDirection * 30;
@@ -133,7 +132,29 @@ public class Inventory : MonoBehaviour
         //handRotation.z = -handRotation.z;
         activeItem.transform.rotation = handRotation;
         Vector3 activeItemScale = activeItem.transform.localScale;
-        Vector3 updatedItemScale = new Vector3(-playerDirection*Mathf.Abs(activeItemScale.x), Mathf.Abs(activeItemScale.y), activeItemScale.z);
+        Vector3 updatedItemScale = new Vector3(-playerDirection * Mathf.Abs(activeItemScale.x), Mathf.Abs(activeItemScale.y), activeItemScale.z);
         activeItem.transform.localScale = updatedItemScale;
+    }
+
+    void InventoryIcons()
+    {
+        // Add inventory icons here
+        GameObject slot_0 = GameObject.Find("InventorySlot (0)");
+        GameObject slot_1 = GameObject.Find("InventorySlot (1)");
+        GameObject slot_2 = GameObject.Find("InventorySlot (2)");
+        GameObject slot_3 = GameObject.Find("InventorySlot (3)");
+        GameObject slot_4 = GameObject.Find("InventorySlot (4)");
+        GameObject slot_5 = GameObject.Find("InventorySlot (5)");
+        GameObject slot_6 = GameObject.Find("InventorySlot (6)");
+        GameObject slot_0_go = new GameObject("Slot0");
+        slot_0_go.AddComponent<SpriteRenderer>();
+        slot_0_go.GetComponent<SpriteRenderer>().sprite = bowSprite;
+        slot_0_go.transform.position = slot_0.transform.position;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        UpdateHandItemPosition();
     }
 }
