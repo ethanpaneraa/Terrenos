@@ -39,9 +39,11 @@ public class PlayerController : MonoBehaviour
     public int inventorySlot = 2;
     public Inventory inventory;
     public bool HoldingBow = false; 
+    public bool HoldingSword = false;
     public Bow bow; 
     public bool playerCanShoot; 
     public bool playerShootVolley; 
+    public bool playerCanHeavyAttack; 
     
 
     //private float timeBetweenAttacks;
@@ -124,14 +126,16 @@ public class PlayerController : MonoBehaviour
         }
 
         if (playerMana < 10) {
-            Debug.Log("here"); 
             playerCanShoot = false; 
         }
 
         if (playerMana < 20) {
-             Debug.Log("her2"); 
             playerShootVolley = false; 
         } 
+
+        if (playerMana < 15) {
+            playerCanHeavyAttack = false; 
+        }
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.x = Mathf.RoundToInt(mousePos.x);
@@ -152,6 +156,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && HoldingBow && playerMana >= 20 && bow.canFireVolley) {
             playerMana -= 20;
             ManaBar.setMana(playerMana);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q) && playerMana >= 15 && HoldingSword) {
+            playerMana -= 15;
+            ManaBar.setMana(playerMana); 
         }
 
     }
@@ -204,37 +213,45 @@ public class PlayerController : MonoBehaviour
             HoldingBow = true; 
             playerCanShoot = true; 
             playerShootVolley = true; 
+            HoldingSword = true; 
             inventorySlot = 0;
         }
         else if (Input.GetKey(KeyCode.Alpha2) && inventorySlot != 1)
         {
             HoldingBow = false; 
+            HoldingSword = true; 
+            playerCanHeavyAttack = true; 
             inventorySlot = 1;
 
         }
         else if (Input.GetKey(KeyCode.Alpha3) && inventorySlot != 2)
         {
             HoldingBow = false; 
+            HoldingSword = false; 
             inventorySlot = 2;
         }
         else if (Input.GetKey(KeyCode.Alpha4) && inventorySlot != 3)
         {
             HoldingBow = false; 
+            HoldingSword = false; 
             inventorySlot = 3;
         }
         else if (Input.GetKey(KeyCode.Alpha5) && inventorySlot != 4)
         {
             HoldingBow = false; 
+            HoldingSword = false; 
             inventorySlot = 4;
         }
         else if (Input.GetKey(KeyCode.Alpha6) && inventorySlot != 5)
         {
             HoldingBow = false; 
+            HoldingSword = false; 
             inventorySlot = 5;
         }
         else if (Input.GetKey(KeyCode.Alpha7) && inventorySlot != 6)
         {
-            HoldingBow = false; 
+            HoldingBow = false;
+            HoldingSword = false;  
             inventorySlot = 6;
         }
         else
