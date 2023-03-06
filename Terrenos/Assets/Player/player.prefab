@@ -563,7 +563,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e848eb8f166f584478b73cd01e0165d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
   jumpHeight: 8
   onGround: 1
   horizontalMovement: 0
@@ -571,6 +570,19 @@ MonoBehaviour:
   experiencePoints: 0
   healthPoints: 10
   hit: 0
+  place: 0
+  blockSprite: {fileID: 0}
+  worldGenerator: {fileID: 0}
+  gamePauseScreen: {fileID: 0}
+  playerHealth: 100
+  playerMana: 50
+  movementSpeed: 2
+  attackDamage: 15
+  HealthBar: {fileID: 0}
+  ManaBar: {fileID: 0}
+  XpBar: {fileID: 0}
+  inventorySlot: 2
+  inventory: {fileID: 0}
 --- !u!70 &2485461122222585811
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

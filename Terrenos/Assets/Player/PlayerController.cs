@@ -13,14 +13,21 @@ public class PlayerController : MonoBehaviour
     public float healthPoints = 10;
     public bool hit = false;
     public bool place = false;
-    public Sprite blockSprite;
     private Animator anim;
     private Rigidbody2D rigidBody;
+
+    public Sprite blockSprite;
     private SpriteRenderer spriteRenderer;
+    private SpriteRenderer[] childSpriteRenderers;
+
     private CapsuleCollider2D capsuleCollider;
     private Vector2 mousePos;
     public WorldGeneration worldGenerator;
-    public GamePauseScreen gamePauseScreen; 
+    public GamePauseScreen gamePauseScreen;
+
+    private AudioSource audioSource;
+    public AudioClip hitSound;
+
     // Player stats
     public int playerHealth = 100;
     public int playerMana = 50; 
@@ -52,6 +59,9 @@ public class PlayerController : MonoBehaviour
         //transform.position = new Vector2(0, WorldGeneration.worldHeight + capsuleCollider.size.y);
         HealthBar.setMaxHealth(playerHealth); 
         ManaBar.setMaxMana(playerMana);
+        childSpriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -143,7 +153,19 @@ public class PlayerController : MonoBehaviour
         {
             // Get the player's health component
             playerHealth -= 20; 
-            HealthBar.setHealth(playerHealth); 
+            HealthBar.setHealth(playerHealth);
+            foreach (SpriteRenderer spriteRenderer in childSpriteRenderers)
+            {
+                spriteRenderer.color = Color.red;
+            }
+            audioSource.PlayOneShot(hitSound);
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        foreach (SpriteRenderer spriteRenderer in childSpriteRenderers)
+        {
+            spriteRenderer.color = Color.white;
         }
     }
 
