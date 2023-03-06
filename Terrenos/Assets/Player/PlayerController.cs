@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -122,7 +123,7 @@ public class PlayerController : MonoBehaviour
 
 
         if (playerHealth <= 0){
-            Destroy(this.gameObject); 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         if (playerMana < 10) {
@@ -153,7 +154,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Q) && HoldingBow && playerMana >= 20 && bow.canFireVolley) {
+        if (Input.GetKeyDown(KeyCode.Q) && HoldingBow && playerMana >= 20) {
             playerMana -= 20;
             ManaBar.setMana(playerMana);
         }
@@ -213,7 +214,7 @@ public class PlayerController : MonoBehaviour
             HoldingBow = true; 
             playerCanShoot = true; 
             playerShootVolley = true; 
-            HoldingSword = true; 
+            HoldingSword = false;
             inventorySlot = 0;
         }
         else if (Input.GetKey(KeyCode.Alpha2) && inventorySlot != 1)
