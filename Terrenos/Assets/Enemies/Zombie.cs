@@ -21,7 +21,6 @@ public class Zombie : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("player").transform; // find the player GameObject and get its Transform component
         rb = GetComponent<Rigidbody2D>(); // get the Zombie's Rigidbody2D component
-
         // calculate the time for the next jump
         nextJumpTime = Time.time + Random.Range(minJumpInterval, maxJumpInterval);
         jumpForce = 9f; 
@@ -31,6 +30,9 @@ public class Zombie : MonoBehaviour
     {
 
         if (zombieHealth <= 0) {
+            // float currMana = manabar.GetCurrMana(); 
+            // currMana += 10;
+            // manabar.setMana((int)currMana); 
             Destroy(this.gameObject); 
         }
 

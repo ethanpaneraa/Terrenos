@@ -38,6 +38,10 @@ public class PlayerController : MonoBehaviour
     public XpBar XpBar;
     public int inventorySlot = 2;
     public Inventory inventory;
+    public bool HoldingBow = false; 
+    public Bow bow; 
+    public bool playerCanShoot; 
+    public bool playerShootVolley; 
     
 
     //private float timeBetweenAttacks;
@@ -52,6 +56,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.AddComponent<Bow>(); 
+        bow = this.gameObject.GetComponent<Bow>(); 
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -105,16 +111,27 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = new Vector3(1, 1, 1);
 
-        }    
+        }   
 
     }
 
     private void Update()
     {
 
+
         if (playerHealth <= 0){
             Destroy(this.gameObject); 
         }
+
+        if (playerMana < 10) {
+            Debug.Log("here"); 
+            playerCanShoot = false; 
+        }
+
+        if (playerMana < 20) {
+             Debug.Log("her2"); 
+            playerShootVolley = false; 
+        } 
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.x = Mathf.RoundToInt(mousePos.x);
@@ -126,6 +143,16 @@ public class PlayerController : MonoBehaviour
             XpBar.setXP(XpBar.currentXP += 10); 
         }
 
+        if (Input.GetMouseButtonDown(0) && HoldingBow && playerMana >= 10 && bow.canFire) {
+            playerMana -= 10;
+            ManaBar.setMana(playerMana);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Q) && HoldingBow && playerMana >= 20 && bow.canFireVolley) {
+            playerMana -= 20;
+            ManaBar.setMana(playerMana);
+        }
 
     }
 
@@ -174,31 +201,40 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Alpha1) && inventorySlot != 0)
         {
+            HoldingBow = true; 
+            playerCanShoot = true; 
+            playerShootVolley = true; 
             inventorySlot = 0;
         }
         else if (Input.GetKey(KeyCode.Alpha2) && inventorySlot != 1)
         {
+            HoldingBow = false; 
             inventorySlot = 1;
 
         }
         else if (Input.GetKey(KeyCode.Alpha3) && inventorySlot != 2)
         {
+            HoldingBow = false; 
             inventorySlot = 2;
         }
         else if (Input.GetKey(KeyCode.Alpha4) && inventorySlot != 3)
         {
+            HoldingBow = false; 
             inventorySlot = 3;
         }
         else if (Input.GetKey(KeyCode.Alpha5) && inventorySlot != 4)
         {
+            HoldingBow = false; 
             inventorySlot = 4;
         }
         else if (Input.GetKey(KeyCode.Alpha6) && inventorySlot != 5)
         {
+            HoldingBow = false; 
             inventorySlot = 5;
         }
         else if (Input.GetKey(KeyCode.Alpha7) && inventorySlot != 6)
         {
+            HoldingBow = false; 
             inventorySlot = 6;
         }
         else

@@ -10,7 +10,12 @@ public class ManaBar : MonoBehaviour
 
     public void setMana(int Mana) {
 
-        slider.value = Mana; 
+        if (Mana <= 0) {
+            slider.value = 0; 
+        }
+        else {
+            slider.value = Mana; 
+        }
 
     }
 
@@ -20,6 +25,7 @@ public class ManaBar : MonoBehaviour
         slider.value = Mana; 
 
     }
+
 
 
 }
