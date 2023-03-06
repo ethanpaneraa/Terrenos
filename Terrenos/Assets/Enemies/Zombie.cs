@@ -15,7 +15,8 @@ public class Zombie : MonoBehaviour
     private float jumpTimer = 0f; // a timer to track when the Zombie can jump again
     private float nextJumpTime = 0f; // the time when the Zombie will jump next
     public int zombieHealth = 150; 
-    public int zombieDamage = 20; 
+    public int zombieDamage = 20;
+    public AudioClip zombieDeath;
 
     private void Start()
     {
@@ -23,16 +24,19 @@ public class Zombie : MonoBehaviour
         rb = GetComponent<Rigidbody2D>(); // get the Zombie's Rigidbody2D component
         // calculate the time for the next jump
         nextJumpTime = Time.time + Random.Range(minJumpInterval, maxJumpInterval);
-        jumpForce = 9f; 
-    }
+        jumpForce = 9f;    }
 
     private void Update()
     {
 
         if (zombieHealth <= 0) {
-            // float currMana = manabar.GetCurrMana(); 
-            // currMana += 10;
-            // manabar.setMana((int)currMana); 
+//<<<<<<< Updated upstream
+//            // float currMana = manabar.GetCurrMana(); 
+//            // currMana += 10;
+//            // manabar.setMana((int)currMana); 
+//=======
+//            //AudioSource.PlayClipAtPoint(zombieDeath, rb.position);
+//>>>>>>> Stashed changes
             Destroy(this.gameObject); 
         }
 
@@ -52,7 +56,7 @@ public class Zombie : MonoBehaviour
             nextJumpTime = Time.time + Random.Range(minJumpInterval, maxJumpInterval);
         }
     }
-
+     
 
     private void OnCollisionEnter2D(Collision2D col)
     {

@@ -20,10 +20,14 @@ public class BuildController : MonoBehaviour
     public PlayerController playerController;
     private Inventory inventory;
     private InventoryItem inventoryItem;
+
+    private AudioSource audioSource;
+    public AudioClip deathSound;
     
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         destructibleTilemap = GetComponent<Tilemap>();
         playerTransform = player.GetComponent<Transform>();
         buildController = this;
@@ -69,6 +73,13 @@ public class BuildController : MonoBehaviour
             // set tile
             destructibleTilemap.SetTile(mousePos, tileBaseArray[0]);
             startMouseDown = Time.time;
+        }
+
+        // death sound
+        if (playerController.playerHealth <= 0)
+        {
+            Debug.Log("dead");
+            audioSource.PlayOneShot(deathSound);
         }
     }
     // check if any tiles are adjacent

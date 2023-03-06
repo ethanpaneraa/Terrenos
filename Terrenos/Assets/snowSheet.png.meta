@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -121,9 +121,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1125
-        width: 1180
-        height: 375
+        y: 600
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a93f98be011f4980aae51a6dcc78753
-      internalID: -1052115897
+      spriteID: 38b30224da0a147ca8874ac5cc02f6aa
+      internalID: 1386590756
       vertices: []
       indices: 
       edges: []
@@ -141,10 +141,10 @@ TextureImporter:
       name: snowSheet_1
       rect:
         serializedVersion: 2
-        x: 1180
-        y: 1125
-        width: 1180
-        height: 375
+        x: 200
+        y: 600
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff1368a96f768468fb2bdef56597cd05
-      internalID: 2048297392
+      spriteID: c3354cdbb418547c59ca8bc5cd78f81a
+      internalID: -1922788118
       vertices: []
       indices: 
       edges: []
@@ -162,10 +162,10 @@ TextureImporter:
       name: snowSheet_2
       rect:
         serializedVersion: 2
-        x: 2360
-        y: 1125
-        width: 1180
-        height: 375
+        x: 400
+        y: 600
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5186a3b47f7b46d387f4cfcd3a82fca
-      internalID: 1091777247
+      spriteID: 1ec7dd437dc6d4547bfd1c4add35d041
+      internalID: -1923512612
       vertices: []
       indices: 
       edges: []
@@ -183,10 +183,10 @@ TextureImporter:
       name: snowSheet_3
       rect:
         serializedVersion: 2
-        x: 3540
-        y: 1125
-        width: 1180
-        height: 375
+        x: 600
+        y: 600
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 963262cc9f2c14984af7f10b80b37f4a
-      internalID: 1431387312
+      spriteID: 9e2d60d7affa2411389d4ec9327ef0f8
+      internalID: 1431917123
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
       name: snowSheet_4
       rect:
         serializedVersion: 2
-        x: 4720
-        y: 1125
-        width: 1180
-        height: 375
+        x: 800
+        y: 600
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b5798c560df24422b3abb0231774c8a
-      internalID: 182259894
+      spriteID: 07795d945fcd34001abda5ae9bdaa6fb
+      internalID: 1186251161
       vertices: []
       indices: 
       edges: []
@@ -226,9 +226,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 750
-        width: 1180
-        height: 375
+        y: 400
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 109e8fa51b3684484af7b7d1e60d5477
-      internalID: -1022946842
+      spriteID: 6ae81d86938c743c68b8d3f19fe2f079
+      internalID: -1124508176
       vertices: []
       indices: 
       edges: []
@@ -246,10 +246,10 @@ TextureImporter:
       name: snowSheet_6
       rect:
         serializedVersion: 2
-        x: 1180
-        y: 750
-        width: 1180
-        height: 375
+        x: 200
+        y: 400
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,8 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c52124f21089b4648815d3f00185f98d
-      internalID: -1491559331
+      spriteID: b9d2fc4d2ac814e79a3852172aa603de
+      internalID: -1974399854
       vertices: []
       indices: 
       edges: []
@@ -267,10 +267,10 @@ TextureImporter:
       name: snowSheet_7
       rect:
         serializedVersion: 2
-        x: 2360
-        y: 750
-        width: 1180
-        height: 375
+        x: 400
+        y: 400
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2214fdc9685fd41d4a1b623fc2adbcf1
-      internalID: 928804516
+      spriteID: 705fda49e14654e2687ed64c97aa7531
+      internalID: 1750924194
       vertices: []
       indices: 
       edges: []
@@ -288,10 +288,10 @@ TextureImporter:
       name: snowSheet_8
       rect:
         serializedVersion: 2
-        x: 3540
-        y: 750
-        width: 1180
-        height: 375
+        x: 600
+        y: 400
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,8 +299,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7afd91a69ce2e4a958b40a73866376dd
-      internalID: 1068074027
+      spriteID: 31343a9d569fc42a293733f24dd96298
+      internalID: -399439668
       vertices: []
       indices: 
       edges: []
@@ -309,10 +309,10 @@ TextureImporter:
       name: snowSheet_9
       rect:
         serializedVersion: 2
-        x: 4720
-        y: 750
-        width: 1180
-        height: 375
+        x: 800
+        y: 400
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,8 +320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ef4489b0bb114ea7980ec721349b67c
-      internalID: -1010034275
+      spriteID: ec6dab92fb91a488a8a6423377833988
+      internalID: 935253700
       vertices: []
       indices: 
       edges: []
@@ -331,9 +331,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 375
-        width: 1180
-        height: 375
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,8 +341,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 612110d59cb9b429aa5bc43b3ab90968
-      internalID: 38047726
+      spriteID: 973cc3f2634e147238a5e08bd434876e
+      internalID: 209756585
       vertices: []
       indices: 
       edges: []
@@ -351,10 +351,10 @@ TextureImporter:
       name: snowSheet_11
       rect:
         serializedVersion: 2
-        x: 1180
-        y: 375
-        width: 1180
-        height: 375
+        x: 200
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,8 +362,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad25b3ff8f8904eafa5b6a5fa8661089
-      internalID: -2088066845
+      spriteID: 1c5f8cc8ac4bd4fe6b8280e8e517e795
+      internalID: 1028644311
       vertices: []
       indices: 
       edges: []
@@ -372,10 +372,10 @@ TextureImporter:
       name: snowSheet_12
       rect:
         serializedVersion: 2
-        x: 2360
-        y: 375
-        width: 1180
-        height: 375
+        x: 400
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,8 +383,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c07e2955066141ae96b775598f3b234
-      internalID: 1589145568
+      spriteID: cb8054dc2658644309ce2c5c1187d227
+      internalID: -1220942113
       vertices: []
       indices: 
       edges: []
@@ -393,10 +393,10 @@ TextureImporter:
       name: snowSheet_13
       rect:
         serializedVersion: 2
-        x: 3540
-        y: 375
-        width: 1180
-        height: 375
+        x: 600
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,8 +404,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e69f7b5373324cbcaba8fe42aa74255
-      internalID: -2043351552
+      spriteID: 041ce67a4cadc4bf5ada0a0a580dc53e
+      internalID: 1992135128
       vertices: []
       indices: 
       edges: []
@@ -414,10 +414,10 @@ TextureImporter:
       name: snowSheet_14
       rect:
         serializedVersion: 2
-        x: 4720
-        y: 375
-        width: 1180
-        height: 375
+        x: 800
+        y: 200
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,8 +425,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2209bddebaf0b4bc790458da6ba064bc
-      internalID: -1017805580
+      spriteID: 8051238126e3341789257a4651ff3454
+      internalID: 1695097671
       vertices: []
       indices: 
       edges: []
@@ -437,8 +437,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1180
-        height: 375
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,8 +446,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e68f1055e98d4a5394a61ac53d1398c
-      internalID: -158890396
+      spriteID: 05955f37540c34692bb0bb73cd4353d3
+      internalID: -831615909
       vertices: []
       indices: 
       edges: []
@@ -456,10 +456,10 @@ TextureImporter:
       name: snowSheet_16
       rect:
         serializedVersion: 2
-        x: 1180
+        x: 200
         y: 0
-        width: 1180
-        height: 375
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,8 +467,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bb5a216dd2aa45c0bb909cc84cefb96
-      internalID: 1421684504
+      spriteID: 4e2dd21dba73b4ae99e000838970b492
+      internalID: -693186630
       vertices: []
       indices: 
       edges: []
@@ -477,10 +477,10 @@ TextureImporter:
       name: snowSheet_17
       rect:
         serializedVersion: 2
-        x: 2360
+        x: 400
         y: 0
-        width: 1180
-        height: 375
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,8 +488,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fb42e60d7b0a4fb8a23a1f3d81adc4e
-      internalID: -859253512
+      spriteID: 489a6ac22336a4447b424ec3a90e5863
+      internalID: -1007041473
       vertices: []
       indices: 
       edges: []
@@ -498,10 +498,10 @@ TextureImporter:
       name: snowSheet_18
       rect:
         serializedVersion: 2
-        x: 3540
+        x: 600
         y: 0
-        width: 1180
-        height: 375
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -509,8 +509,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a17ca1d603e214b29be3712e702184b4
-      internalID: -1143799840
+      spriteID: e07e7111cd9994c61a26bda1d6c88b48
+      internalID: 1676878090
       vertices: []
       indices: 
       edges: []
@@ -519,10 +519,10 @@ TextureImporter:
       name: snowSheet_19
       rect:
         serializedVersion: 2
-        x: 4720
+        x: 800
         y: 0
-        width: 1180
-        height: 375
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -530,8 +530,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bb5f5b17922f4f10a0f2ae42fcf1ab0
-      internalID: 200955203
+      spriteID: 4ab77839ed687438eb9b5cdb1ad212fb
+      internalID: -1621216723
       vertices: []
       indices: 
       edges: []
@@ -547,26 +547,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      snowSheet_17: -859253512
-      snowSheet_7: 928804516
-      snowSheet_12: 1589145568
-      snowSheet_18: -1143799840
-      snowSheet_9: -1010034275
-      snowSheet_4: 182259894
-      snowSheet_15: -158890396
-      snowSheet_19: 200955203
-      snowSheet_13: -2043351552
-      snowSheet_10: 38047726
-      snowSheet_5: -1022946842
-      snowSheet_2: 1091777247
-      snowSheet_0: -1052115897
-      snowSheet_16: 1421684504
-      snowSheet_14: -1017805580
-      snowSheet_1: 2048297392
-      snowSheet_3: 1431387312
-      snowSheet_6: -1491559331
-      snowSheet_11: -2088066845
-      snowSheet_8: 1068074027
+      snowSheet_17: -1007041473
+      snowSheet_7: 1750924194
+      snowSheet_12: -1220942113
+      snowSheet_18: 1676878090
+      snowSheet_9: 935253700
+      snowSheet_4: 1186251161
+      snowSheet_15: -831615909
+      snowSheet_19: -1621216723
+      snowSheet_13: 1992135128
+      snowSheet_10: 209756585
+      snowSheet_5: -1124508176
+      snowSheet_2: -1923512612
+      snowSheet_0: 1386590756
+      snowSheet_16: -693186630
+      snowSheet_14: 1695097671
+      snowSheet_1: -1922788118
+      snowSheet_3: 1431917123
+      snowSheet_6: -1974399854
+      snowSheet_11: 1028644311
+      snowSheet_8: -399439668
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

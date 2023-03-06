@@ -496,7 +496,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   jumpForce: 8
-  jumpInterval: 3
+  minJumpInterval: 1
+  maxJumpInterval: 9
+  zombieHealth: 150
+  zombieDamage: 20
+  zombieDeath: {fileID: 8300000, guid: 10aec50b52ff84017b9d87b250bc876c, type: 3}
 --- !u!1 &8753026228952646317
 GameObject:
   m_ObjectHideFlags: 0

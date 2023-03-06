@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     private AudioSource audioSource;
     public AudioClip hitSound;
+    public AudioClip deathSound;
 
     // Player stats
     public int playerHealth = 100;
@@ -123,19 +124,26 @@ public class PlayerController : MonoBehaviour
 
 
         if (playerHealth <= 0){
+//<<<<<<< Updated upstream
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        if (playerMana < 10) {
-            playerCanShoot = false; 
+        if (playerMana < 10)
+        {
+            playerCanShoot = false;
         }
 
-        if (playerMana < 20) {
-            playerShootVolley = false; 
-        } 
+        if (playerMana < 20)
+        {
+            playerShootVolley = false;
+        }
 
-        if (playerMana < 15) {
-            playerCanHeavyAttack = false; 
+        if (playerMana < 15)
+        {
+            playerCanHeavyAttack = false;
+//=======
+            //Destroy(this.gameObject);
+//>>>>>>> Stashed changes
         }
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -196,13 +204,13 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("zombie"))
         {
             // Get the player's health component
+            audioSource.PlayOneShot(hitSound);
             playerHealth -= 20; 
             HealthBar.setHealth(playerHealth);
             foreach (SpriteRenderer spriteRenderer in childSpriteRenderers)
             {
                 spriteRenderer.color = Color.red;
             }
-            audioSource.PlayOneShot(hitSound);
         }
 
     }
