@@ -186,6 +186,13 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Check if the collision is with the player
+        if (collision.gameObject.CompareTag("border"))
+        {
+            // Get the player's health component
+            playerHealth = 0;
+         }
+
+
         if (collision.gameObject.CompareTag("zombie"))
         {
             // Get the player's health component
@@ -197,6 +204,7 @@ public class PlayerController : MonoBehaviour
             }
             audioSource.PlayOneShot(hitSound);
         }
+
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
