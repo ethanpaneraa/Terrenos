@@ -12,7 +12,7 @@ public class Zombie : MonoBehaviour
     public float maxJumpInterval = 9f; // the maximum time interval between jumps
     private Transform player; // a reference to the player's Transform component
     private Rigidbody2D rb; // a reference to the Zombie's Rigidbody2D component
-    private float jumpTimer = 0f; // a timer to track when the Zombie can jump again
+    //private float jumpTimer = 0f; // a timer to track when the Zombie can jump again
     private float nextJumpTime = 0f; // the time when the Zombie will jump next
     public int zombieHealth = 150; 
     public int zombieDamage = 20;

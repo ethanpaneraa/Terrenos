@@ -197,8 +197,15 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("border"))
         {
             // Get the player's health component
-            playerHealth = 0;
-         }
+            //playerHealth = 0;
+            audioSource.PlayOneShot(hitSound);
+            playerHealth -= 10;
+            HealthBar.setHealth(playerHealth);
+            foreach (SpriteRenderer spriteRenderer in childSpriteRenderers)
+            {
+                spriteRenderer.color = Color.red;
+            }
+        }
 
 
         if (collision.gameObject.CompareTag("zombie"))
