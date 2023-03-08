@@ -87,18 +87,6 @@ public class PlayerController : MonoBehaviour
         place = Input.GetKey(KeyCode.P) && !place;
         InventorySlot();
 
-        // Behavior when player is hitting
-        if (hit)
-        {
-            worldGenerator.RemoveBlock(mousePos);
-        }
-
-        // Behavior when player is placing???
-        if (place)
-        {
-            //worldGenerator.PlaceBlock("placedBlock", "ground", blockSprite, mousePos);
-        }
-
         if (onGround && verticalMovement > 0.1)
         {
             // Gets rid of health and mana when you jump
