@@ -156,10 +156,6 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("hit", hit);
         anim.SetFloat("horizontal", horizontalMovement);
 
-        if (Input.GetKeyDown(KeyCode.X)) {
-            XpBar.setXP(XpBar.currentXP += 10); 
-        }
-
         if (Input.GetMouseButtonDown(0) && HoldingBow && playerMana >= 10 && bow.canFire) {
             playerMana -= 10;
             ManaBar.setMana(playerMana);
@@ -203,7 +199,7 @@ public class PlayerController : MonoBehaviour
             // Get the player's health component
             //playerHealth = 0;
             audioSource.PlayOneShot(hitSound);
-            playerHealth -= 10;
+            playerHealth = 0;
             HealthBar.setHealth(playerHealth);
             foreach (SpriteRenderer spriteRenderer in childSpriteRenderers)
             {

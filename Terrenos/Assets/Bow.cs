@@ -50,7 +50,7 @@ public class Bow : MonoBehaviour
             rotation = Quaternion.Euler(0,0, -45); 
         }
 
-        if (Time.time >= nextShotTime && Input.GetButtonDown("Fire1") && PlayerController.playerCanShoot && PlayerController.HoldingBow){
+        if (Time.time >= nextShotTime && Input.GetMouseButtonDown(0) && PlayerController.playerCanShoot && PlayerController.HoldingBow){
             // instantiate the arrow prefab in the middle of the player's facing direction
             GameObject arrow = Instantiate(arrowPrefab, player.transform.position + (Vector3)direction * 0.5f, Quaternion.identity);
 
@@ -67,7 +67,7 @@ public class Bow : MonoBehaviour
          }
 
 
-         else if (Time.time >= nextShotTime && PlayerController.playerShootVolley && Input.GetKeyDown(KeyCode.Q) && PlayerController.HoldingBow) {
+         if (Time.time >= nextShotTime && PlayerController.playerShootVolley && Input.GetKeyDown(KeyCode.Q) && PlayerController.HoldingBow) {
 
             for (int i = 0; i < 3; i++) {
                 GameObject arrow = Instantiate(arrowPrefab, player.transform.position + (Vector3)direction * 0.5f, Quaternion.identity);

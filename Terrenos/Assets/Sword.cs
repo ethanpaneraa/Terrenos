@@ -6,12 +6,14 @@ public class Sword : MonoBehaviour
 {
 
     public float attackRadius = 1.5f;
-    public float cooldownTime = 0.5f;
+    public float cooldownTime = 0.2f;
 
     private float lastAttackTime;
 
     public GameObject player; 
+    public GameObject XPBar; 
     public PlayerController PlayerController; 
+    public XpBar experienceBar; 
 
     private void Start() {
         attackRadius = 3.5f; 
@@ -50,7 +52,11 @@ public class Sword : MonoBehaviour
                             // Do damage to enemy here (you'll need to implement this yourself)
                             Debug.Log(collider); 
                             Zombie zombie = collider.gameObject.GetComponent<Zombie>(); 
-                            zombie.zombieHealth -= 80; 
+                            zombie.zombieHealth -= 60; 
+                            // if (zombie.zombieHealth <= 0) {
+                            //     int currXP = experienceBar.currentXP; 
+                            //     experienceBar.setXP(currXP + 75); 
+                            // }
 
                         }
                     }

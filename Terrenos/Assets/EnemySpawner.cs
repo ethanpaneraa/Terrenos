@@ -6,39 +6,33 @@ public class EnemySpawner : MonoBehaviour
 {
     // Start is called before the first frame update
     public Zombie Zombie;  // The enemy prefab to be spawned
-    public int numEnemiesToSpawn = 3;  // The number of enemies to spawn at once
-    public float spawnInterval = 800f;  // The time interval between enemy spawns
-    private float timeSinceLastSpawn = 0f;  // The time elapsed since the last enemy spawn
-    private int numEnemiesSpawned = 0;  // The number of enemies spawned in the current wave
+    // public int numEnemiesToSpawn = 3;  // The number of enemies to spawn at once
+    // public float spawnInterval = 800f;  // The time interval between enemy spawns
+    // private float timeSinceLastSpawn = 0f;  // The time elapsed since the last enemy spawn
+    // private int numEnemiesSpawned = 0;  // The number of enemies spawned in the current wave
+    public int zombiesPerWave = 7;
+    public float timeBetweenWaves = 120f;
+    private int zombiesSpawned = 0;
 
-    void Update()
+    void Start()
     {
-        // Increment the time since the last enemy spawn
-        timeSinceLastSpawn += Time.deltaTime;
-
-        // If the time since the last spawn is greater than or equal to the spawn interval...
-        if (timeSinceLastSpawn >= spawnInterval)
-        {
-            // Reset the time since the last spawn
-            timeSinceLastSpawn = 0f;
-            numEnemiesSpawned = 0;
-
-            // Spawn multiple instances of the enemy prefab at intervals
-            StartCoroutine(SpawnEnemiesInterval());
-        }
+        StartCoroutine(SpawnZombies());
     }
 
-    IEnumerator SpawnEnemiesInterval()
+    private IEnumerator SpawnZombies()
     {
-        while (numEnemiesSpawned < numEnemiesToSpawn)
+       while (true)
         {
-            // Spawn an instance of the enemy prefab at the spawner's position and rotation
-            Instantiate(Zombie, transform.position, transform.rotation);
-
-            numEnemiesSpawned++;
-
-            // Wait for 1 second before spawning the next enemy
-            yield return new WaitForSeconds(spawnInterval / numEnemiesToSpawn);
+            if (zombiesSpawned < zombiesPerWave)
+            {
+                Instantiate(Zombie, transform.position, Quaternion.identity);
+                zombiesSpawned++;
+            }
+            else
+            {
+                zombiesSpawned = 0;
+                yield return new WaitForSeconds(timeBetweenWaves);
+            }
         }
     }
 }

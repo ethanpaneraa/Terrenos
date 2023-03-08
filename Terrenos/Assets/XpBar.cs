@@ -10,6 +10,7 @@ public class XpBar : MonoBehaviour
     public int currentLevel = 1;
     public int currentMaxXP = 100; 
     public int currentXP = 0; 
+    public int prevNumZombies = 0; 
     public LevelUpBackground LevelUpBackground; 
 
 
@@ -26,15 +27,28 @@ public class XpBar : MonoBehaviour
         slider.maxValue = currentMaxXP; 
     }
 
-
+    
 
     void Update() {
+
+        GameObject[] zombies = GameObject.FindGameObjectsWithTag("zombie");
+
+        int numZombies = zombies.Length;
+
+        if (numZombies < prevNumZombies) {
+            // Update the currentXP variable
+            currentXP += 50;
+            setXP(currentXP); 
+        }
+
 
         if (currentXP == currentMaxXP) {
             setXP(0);  
             levelUp(); 
             LevelUpBackground.showLevelUpScreen(); 
         }
+
+        prevNumZombies = numZombies;
 
     }
 
