@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip hitSound;
     public AudioClip deathSound;
+    public AudioClip congrats;
+
+    public Canvas canvasWin;
 
     // Player stats
     public int playerHealth = 100;
@@ -124,7 +127,8 @@ public class PlayerController : MonoBehaviour
 
 
         if (playerHealth <= 0){
-//<<<<<<< Updated upstream
+            audioSource.PlayOneShot(deathSound);
+            //<<<<<<< Updated upstream
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
@@ -218,6 +222,11 @@ public class PlayerController : MonoBehaviour
             {
                 spriteRenderer.color = Color.red;
             }
+        }
+        if (collision.collider.CompareTag("flag"))
+        {
+            audioSource.PlayOneShot(congrats);
+            canvasWin.enabled = true;
         }
 
     }

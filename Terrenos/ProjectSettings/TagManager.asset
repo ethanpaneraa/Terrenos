@@ -12,6 +12,7 @@ TagManager:
   - block
   - arrow
   - border
+  - flag
   layers:
   - Default
   - TransparentFX

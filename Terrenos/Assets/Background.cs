@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Background : MonoBehaviour
 {
+    public float raiseVal;
     public GameObject player;
     private Vector2 playerPos;
     private Transform tr;
@@ -18,6 +19,6 @@ public class Background : MonoBehaviour
     void Update()
     {
         playerPos = player.transform.position;
-        tr.position = playerPos;
+        tr.position = new Vector2(0, playerPos.y+raiseVal);
     }
 }

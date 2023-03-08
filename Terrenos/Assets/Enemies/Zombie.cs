@@ -35,7 +35,7 @@ public class Zombie : MonoBehaviour
 //            // currMana += 10;
 //            // manabar.setMana((int)currMana); 
 //=======
-//            //AudioSource.PlayClipAtPoint(zombieDeath, rb.position);
+            AudioSource.PlayClipAtPoint(zombieDeath, rb.position);
 //>>>>>>> Stashed changes
             Destroy(this.gameObject); 
         }
