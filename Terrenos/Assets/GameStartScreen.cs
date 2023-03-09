@@ -22,7 +22,6 @@ public class GameStartScreen : MonoBehaviour
     // Happens when player presses the quit button
     public void QuitGame() {
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false; 
     }
 
     public bool getGameState() {

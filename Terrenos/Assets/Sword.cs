@@ -50,14 +50,14 @@ public class Sword : MonoBehaviour
                         {
                             // Debug.Log("here"); 
                             // Do damage to enemy here (you'll need to implement this yourself)
-                            Debug.Log(collider); 
+                            // Debug.Log(collider); 
                             Zombie zombie = collider.gameObject.GetComponent<Zombie>(); 
                             zombie.zombieHealth -= 60; 
                             // if (zombie.zombieHealth <= 0) {
                             //     int currXP = experienceBar.currentXP; 
                             //     experienceBar.setXP(currXP + 75); 
                             // }
-
+                            zombie.makeRed();
                         }
                     }
                 }
@@ -86,7 +86,7 @@ public class Sword : MonoBehaviour
                         {
                             // Debug.Log("here"); 
                             // Do damage to enemy here (you'll need to implement this yourself)
-                            Debug.Log(collider); 
+                            // Debug.Log(collider); 
                             Zombie zombie = collider.gameObject.GetComponent<Zombie>(); 
                             zombie.zombieHealth -= 200; 
 

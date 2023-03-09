@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -48,9 +49,8 @@ public class PlayerController : MonoBehaviour
     public Bow bow; 
     public bool playerCanShoot; 
     public bool playerShootVolley; 
-    public bool playerCanHeavyAttack; 
-    
-
+    public bool playerCanHeavyAttack;
+    public int prevNumZombies = 0;
     //private float timeBetweenAttacks;
     //public float startTimeBetweenAttacks;
     //public Transform attackPos;
@@ -132,9 +132,6 @@ public class PlayerController : MonoBehaviour
         if (playerMana < 15)
         {
             playerCanHeavyAttack = false;
-//=======
-            //Destroy(this.gameObject);
-//>>>>>>> Stashed changes
         }
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -158,6 +155,18 @@ public class PlayerController : MonoBehaviour
             playerMana -= 15;
             ManaBar.setMana(playerMana); 
         }
+
+        GameObject[] zombies = GameObject.FindGameObjectsWithTag("zombie");
+
+        int numZombies = zombies.Length;
+
+        if (numZombies < prevNumZombies)
+        {
+            // Update the currentXP variable
+            playerMana += 10;
+        }
+
+        prevNumZombies = numZombies;
 
     }
 

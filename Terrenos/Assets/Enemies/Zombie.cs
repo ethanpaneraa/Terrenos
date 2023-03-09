@@ -17,6 +17,8 @@ public class Zombie : MonoBehaviour
     public int zombieHealth = 150; 
     public int zombieDamage = 20;
     public AudioClip zombieDeath;
+    private SpriteRenderer[] childSpriteRenderers;
+    private int hitByAnArrow = 0;
 
     private void Start()
     {
@@ -24,20 +26,17 @@ public class Zombie : MonoBehaviour
         rb = GetComponent<Rigidbody2D>(); // get the Zombie's Rigidbody2D component
         // calculate the time for the next jump
         nextJumpTime = Time.time + Random.Range(minJumpInterval, maxJumpInterval);
-        jumpForce = 9f;    }
+        jumpForce = 9f;
+        childSpriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+    }
 
     private void Update()
     {
 
         if (zombieHealth <= 0) {
-//<<<<<<< Updated upstream
-//            // float currMana = manabar.GetCurrMana(); 
-//            // currMana += 10;
-//            // manabar.setMana((int)currMana); 
-//=======
             AudioSource.PlayClipAtPoint(zombieDeath, rb.position);
-//>>>>>>> Stashed changes
-            Destroy(this.gameObject); 
+            Destroy(this.gameObject);
+            // player.playerMana += 10;
         }
 
         // calculate the direction to move towards the player
@@ -55,28 +54,46 @@ public class Zombie : MonoBehaviour
             // calculate the time for the next jump
             nextJumpTime = Time.time + Random.Range(minJumpInterval, maxJumpInterval);
         }
+        if (hitByAnArrow == 0)
+        {
+            // Removal of Red Hit indicator
+            foreach (SpriteRenderer spriteRenderer in childSpriteRenderers)
+            {
+                spriteRenderer.color = Color.white;
+            }
+        }
+        hitByAnArrow -= 1;
     }
-     
+
+    public void makeRed()
+    {
+        foreach (SpriteRenderer spriteRenderer in childSpriteRenderers)
+        {
+            spriteRenderer.color = Color.red;
+        }
+        hitByAnArrow = 20;
+    }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "arrow")
-            {
-                // Get the direction from the arrow to the zombie
-                Vector2 direction = transform.position - col.transform.position;
+        if (col.collider.gameObject.tag == "arrow")
+        {
+            // Get the direction from the arrow to the zombie
+            // Vector2 direction = transform.position - col.transform.position;
 
-                // Normalize the direction vector to get a unit vector
-                direction = direction.normalized;
+            // Normalize the direction vector to get a unit vector
+            // direction = direction.normalized;
 
-                Vector2 pointOfImpact = col.contacts[0].point;
+            //  Vector2 pointOfImpact = col.contacts[0].point;
 
-                // Add a force to the zombie in the opposite direction of the arrow
-                
-                GetComponent<Rigidbody2D>().AddForceAtPosition(direction * 200, pointOfImpact, ForceMode2D.Impulse);
+            // Add a force to the zombie in the opposite direction of the arrow
 
-                // col.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-            }
-    }   
+            // GetComponent<Rigidbody2D>().AddForceAtPosition(direction * 200, pointOfImpact, ForceMode2D.Impulse);
 
-    
+            // col.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+
+            // Red Hit indicator
+            makeRed();
+        }
+    }
 }

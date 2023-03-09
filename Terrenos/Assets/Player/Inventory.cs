@@ -132,11 +132,19 @@ public class Inventory : MonoBehaviour
         // rotationQuaternion.z = rotationQuaternion.z - playerDirection * 30;
         //Debug.Log(handRotation.z);
         //handRotation.z = -handRotation.z;
-        activeItem.transform.rotation = handRotation;
         Vector3 activeItemScale = activeItem.transform.localScale;
         Vector3 updatedItemScale = new Vector3(-playerDirection * Mathf.Abs(activeItemScale.x), Mathf.Abs(activeItemScale.y), activeItemScale.z);
+        if (selectedInventoryItem.Places)
+        {
+            updatedItemScale = new Vector3(-playerDirection * Mathf.Abs(activeItemScale.x), Mathf.Abs(activeItemScale.y), activeItemScale.z);
+        }
+        else
+        {
+            activeItem.transform.rotation = handRotation;
+        }
         activeItem.transform.localScale = updatedItemScale;
     }
+
 
     void InventoryIcons()
     {

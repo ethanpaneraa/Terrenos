@@ -23,7 +23,6 @@ public class Ladder : MonoBehaviour
     {
         if (onLadder)
         {
-            Debug.Log("onladder");
             if (Input.GetAxisRaw("Jump") == 0)
             {
                 rb.velocity = new Vector2(rb.velocity.x, Input.GetAxis("Vertical") * climbSpeed);
@@ -38,7 +37,6 @@ public class Ladder : MonoBehaviour
 
         if (collision.CompareTag("player"))
         {
-            Debug.Log("touchedladder");
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.gravityScale = 0;
             onLadder = true;
@@ -49,7 +47,6 @@ public class Ladder : MonoBehaviour
     {
         if (collision.CompareTag("player"))
         {
-            Debug.Log("untouchedladder");
             rb.gravityScale = gravityScale;
             onLadder = false;
         }

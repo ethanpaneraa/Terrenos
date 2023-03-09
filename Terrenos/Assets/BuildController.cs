@@ -78,7 +78,7 @@ public class BuildController : MonoBehaviour
         // death sound
         if (playerController.playerHealth <= 0)
         {
-            Debug.Log("dead");
+            // Debug.Log("dead");
             audioSource.PlayOneShot(deathSound);
         }
     }
