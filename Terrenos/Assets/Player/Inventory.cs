@@ -10,11 +10,13 @@ public class Inventory : MonoBehaviour
     public Sprite swordSprite;
     public Sprite pickaxeSprite;
     public Sprite blockSprite;
+    public Sprite blockStoneSprite;
     private GameObject front_hand;
     private GameObject Bow;
     private GameObject Sword;
     private GameObject Pickaxe;
     private GameObject Block;
+    private GameObject BlockStone;
     public GameObject activeItem;
     public InventoryItem selectedInventoryItem;
     private SpriteRenderer handSpriteRenderer;
@@ -86,13 +88,22 @@ public class Inventory : MonoBehaviour
 
         // Empty
         InventoryItem item_5 = new InventoryItem();
-        GameObject object_5 = new GameObject("Block");
+        item_5.Sprite = blockSprite;
+        item_5.Places = true;
+        item_5.itemName = "blockStone";
+        BlockStone = new GameObject("BlockStone");
+        BlockStone.AddComponent<SpriteRenderer>();
+        BlockStone.GetComponent<SpriteRenderer>().sprite = blockStoneSprite;
+        BlockStone.GetComponent<SpriteRenderer>().flipY = true;
+        BlockStone.SetActive(false);
         InventoryItems.Add(item_5);
-        InventoryObjects.Add(object_5);
+        InventoryObjects.Add(BlockStone);
+
         InventoryItem item_6 = new InventoryItem();
         GameObject object_6 = new GameObject("Block");
         InventoryItems.Add(item_6);
         InventoryObjects.Add(object_6);
+
         InventoryItem item_7 = new InventoryItem();
         GameObject object_7 = new GameObject("Block");
         InventoryItems.Add(item_7);

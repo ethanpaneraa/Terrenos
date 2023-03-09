@@ -71,7 +71,14 @@ public class BuildController : MonoBehaviour
             inventoryItem.Places)
         {
             // set tile
-            destructibleTilemap.SetTile(mousePos, tileBaseArray[0]);
+            if (inventoryItem.itemName == "block")
+            {
+                destructibleTilemap.SetTile(mousePos, tileBaseArray[0]);
+            }
+            else
+            {
+                destructibleTilemap.SetTile(mousePos, tileBaseArray[1]);
+            }
             startMouseDown = Time.time;
         }
 

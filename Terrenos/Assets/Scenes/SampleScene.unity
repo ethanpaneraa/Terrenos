@@ -110088,6 +110088,7 @@ MonoBehaviour:
   swordSprite: {fileID: 21300000, guid: d6a90d47ea7aa0b46b99a8321ecfabf9, type: 3}
   pickaxeSprite: {fileID: 21300000, guid: 1b8bc10546d689f419e0a9ce0cdb952f, type: 3}
   blockSprite: {fileID: 21300000, guid: d643bd97cffae6f4b97a5a2094530402, type: 3}
+  blockStoneSprite: {fileID: 21300000, guid: a6743098691f0b84faddcbd914bb86ea, type: 3}
   activeItem: {fileID: 0}
   selectedInventoryItem: {fileID: 0}
 --- !u!1 &1981281262
