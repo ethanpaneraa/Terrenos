@@ -703,7 +703,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &129740289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109299,6 +109299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ladder (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8097307052746387620, guid: 4fdfb5e40fb544180add66358b6b9f94, type: 3}
+      propertyPath: m_TagString
+      value: ladder
+      objectReference: {fileID: 0}
     - target: {fileID: 8097307052746387622, guid: 4fdfb5e40fb544180add66358b6b9f94, type: 3}
       propertyPath: m_Size.y
       value: 92
@@ -111451,6 +111455,10 @@ PrefabInstance:
       propertyPath: m_SleepingMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2485461122222585809, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2485461122222585810, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
       propertyPath: XpBar
       value: 
@@ -111513,7 +111521,7 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: 3e230302ec765a74facbfe6f5d9a7b16, type: 2}
     - target: {fileID: 2485461122222585811, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
       propertyPath: m_Offset.y
-      value: -1.1
+      value: -1.05
       objectReference: {fileID: 0}
     - target: {fileID: 2485461122222585813, guid: 19ad9032de5224d4c8e2437c81507417, type: 3}
       propertyPath: m_Name
@@ -111599,6 +111607,10 @@ PrefabInstance:
     - target: {fileID: 8097307052746387620, guid: 4fdfb5e40fb544180add66358b6b9f94, type: 3}
       propertyPath: m_Name
       value: Ladder
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097307052746387620, guid: 4fdfb5e40fb544180add66358b6b9f94, type: 3}
+      propertyPath: m_TagString
+      value: ladder
       objectReference: {fileID: 0}
     - target: {fileID: 8097307052746387622, guid: 4fdfb5e40fb544180add66358b6b9f94, type: 3}
       propertyPath: m_Size.y

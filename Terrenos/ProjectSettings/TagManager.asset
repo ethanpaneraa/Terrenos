@@ -13,6 +13,7 @@ TagManager:
   - arrow
   - border
   - flag
+  - ladder
   layers:
   - Default
   - TransparentFX

@@ -87,9 +87,8 @@ public class PlayerController : MonoBehaviour
         place = Input.GetKey(KeyCode.P) && !place;
         InventorySlot();
 
-        if (onGround && verticalMovement > 0.1)
+        if (onGround && verticalMovement > 0.1f)
         {
-            // Gets rid of health and mana when you jump
             verticalMovement = jumpHeight;
         }
         else

@@ -23,6 +23,7 @@ public class Ladder : MonoBehaviour
     {
         if (onLadder)
         {
+            Debug.Log("onladder");
             if (Input.GetAxisRaw("Jump") == 0)
             {
                 rb.velocity = new Vector2(rb.velocity.x, Input.GetAxis("Vertical") * climbSpeed);
@@ -32,15 +33,27 @@ public class Ladder : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        rb.velocity = new Vector2(rb.velocity.x, 0);
-        rb.gravityScale = 0;
-        onLadder = true;
+
+        if (collision.CompareTag("player"))
+        {
+            Debug.Log("touchedladder");
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.gravityScale = 0;
+            onLadder = true;
+        }
+        
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        rb.gravityScale = gravityScale;
-        onLadder = false;
+        if (collision.CompareTag("player"))
+        {
+            Debug.Log("untouchedladder");
+            rb.gravityScale = gravityScale;
+            onLadder = false;
+        }
+
+        
     }
 }
